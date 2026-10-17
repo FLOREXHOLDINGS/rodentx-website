@@ -21,12 +21,20 @@
   var menu = document.getElementById('mobileMenu');
   var toggle = document.getElementById('navToggle');
 
+  function setToggleLabel(open) {
+    var label = toggle ? toggle.querySelector('.nav-toggle-label') : null;
+    if (label) label.textContent = open ? 'Close' : 'Menu';
+    if (toggle) toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+  }
+
   function closeMenu() {
     if (menu) menu.classList.remove('open');
     if (toggle) {
       toggle.classList.remove('open');
       toggle.setAttribute('aria-expanded', 'false');
     }
+    document.body.classList.remove('menu-open');
+    setToggleLabel(false);
   }
 
   function routeFromHash() {
@@ -79,6 +87,8 @@
       var open = menu.classList.toggle('open');
       toggle.classList.toggle('open', open);
       toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      document.body.classList.toggle('menu-open', open);
+      setToggleLabel(open);
     });
     document.addEventListener('keydown', function (e) {
       if (e.key === 'Escape' && menu.classList.contains('open')) closeMenu();
