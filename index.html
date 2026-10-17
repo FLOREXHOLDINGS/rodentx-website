@@ -9,7 +9,7 @@
 <meta property="og:title" content="RodentX Wildlife Management — Finger Lakes Wildlife Removal">
 <meta property="og:description" content="One region. Covered properly. Inspect / Remove / Exclude / Monitor.">
 <meta property="og:type" content="website">
-<link rel="stylesheet" href="styles.css?v=5">
+<link rel="stylesheet" href="styles.css?v=6">
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -21,8 +21,8 @@
     </a>
     <nav class="main-nav" aria-label="Primary">
       <div class="nav-drop" data-group="wildlife">
-        <button class="nav-drop-btn" type="button" aria-expanded="false" aria-haspopup="true">Wildlife Removal <span class="caret" aria-hidden="true">▾</span></button>
-        <div class="nav-drop-panel">
+        <button class="nav-drop-btn" type="button" aria-expanded="false" aria-haspopup="true" aria-controls="nav-panel-wildlife">Wildlife Removal <span class="caret" aria-hidden="true">▾</span></button>
+        <div class="nav-drop-panel" id="nav-panel-wildlife">
           <a href="#/wildlife" data-nav="wildlife">All Wildlife Removal</a>
           <a href="#/mice-rats" data-nav="mice-rats">Mice &amp; Rats</a>
           <a href="#/bats" data-nav="bats">Bats in Attic</a>
@@ -32,8 +32,8 @@
         </div>
       </div>
       <div class="nav-drop" data-group="services">
-        <button class="nav-drop-btn" type="button" aria-expanded="false" aria-haspopup="true">Services <span class="caret" aria-hidden="true">▾</span></button>
-        <div class="nav-drop-panel">
+        <button class="nav-drop-btn" type="button" aria-expanded="false" aria-haspopup="true" aria-controls="nav-panel-services">Services <span class="caret" aria-hidden="true">▾</span></button>
+        <div class="nav-drop-panel" id="nav-panel-services">
           <a href="#/services" data-nav="services">All Services</a>
           <a href="#/inspection" data-nav="inspection">Inspection</a>
           <a href="#/removal" data-nav="removal">Removal</a>
@@ -88,7 +88,7 @@
           <span class="pill">Same-day when available</span>
         </div>
         <div class="hero-proof">
-          <div><strong>Mice &amp; Rats — flagship</strong>Full rodent programs, not one-visit sprays</div>
+          <div><strong>Mice &amp; Rats — flagship</strong>Full rodent programs, not a one-visit spray</div>
           <div><strong>Attic-first</strong>Bats, raccoons &amp; squirrels in attics</div>
           <div><strong>Sealed, in writing</strong>What we seal, documented</div>
         </div>
@@ -189,6 +189,7 @@
         </div>
       </div>
       <p class="territory-note">Smaller towns are served inside these hubs. If your town is in the Finger Lakes Region, tell us your town on the form.</p>
+    <p class="next-step">Next: <a class="link" href="#/contact">Request inspection <span class="arr">→</span></a></p>
       <p><a class="link" href="#/territory">See all service areas <span class="arr">→</span></a></p>
     </div>
   </section>
@@ -198,9 +199,9 @@
       <p class="kicker"><i>06 —</i> QUESTIONS</p>
       <div class="section-head"><h2>Straight<br>answers.</h2><p>What people ask before they book. Full answers live in Resources.</p></div>
       <div class="faq">
-        <div class="faq-item"><button class="faq-q">How fast can you come? <span>+</span></button><div class="faq-a">Same-day when available — best to call or submit a form. We confirm timing by phone or email before we come.</div></div>
-        <div class="faq-item"><button class="faq-q">Do you seal the entry, or just remove the animal? <span>+</span></button><div class="faq-a">Both. Removal without sealing is a repeat visit. Our standard is Inspect / Remove / Exclude / Monitor — the seal is the point.</div></div>
-        <div class="faq-item"><button class="faq-q">Is there a warranty on exclusion work? <span>+</span></button><div class="faq-a">Some exclusion work carries a warranty — coverage for the property is reviewed with you before service begins.</div></div>
+        <div class="faq-item"><button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-a1">How fast can you come? <span class="faq-icon" aria-hidden="true">+</span></button><div class="faq-a" id="faq-a1">Same-day when available — best to call or submit a form. We confirm timing by phone or email before we come.</div></div>
+        <div class="faq-item"><button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-a2">Do you seal the entry, or just remove the animal? <span class="faq-icon" aria-hidden="true">+</span></button><div class="faq-a" id="faq-a2">Both. Removal without sealing is a repeat visit. Our standard is Inspect / Remove / Exclude / Monitor — the seal is the point.</div></div>
+        <div class="faq-item"><button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-a3">Is there a warranty on exclusion work? <span class="faq-icon" aria-hidden="true">+</span></button><div class="faq-a" id="faq-a3">Some exclusion work carries a warranty — coverage for the property is reviewed with you before service begins.</div></div>
       </div>
       <p><a class="link" href="#/faq">See all answers in Resources <span class="arr">→</span></a></p>
     </div>
@@ -214,17 +215,17 @@
         <div class="contact-card">
           <h3>Call or email</h3>
           <p class="contact-lines"><span class="contact-line"><strong>Phone:</strong> <a href="tel:+15855550100">(585) 555-0100</a></span><span class="contact-line"><strong>Email:</strong> <a href="mailto:contact@rodentxwildlife.com">contact@rodentxwildlife.com</a></span><span class="contact-line"><strong>Area:</strong> Finger Lakes Region, NY only</span></p>
-          <p>Same-day when available — best to call or submit a form.</p>
-          <p class="small-note">No street address published — service-area business. Some exclusion work carries a warranty — coverage for the property is reviewed with you before service begins.</p>
+          <p>We reply by phone or email.</p>
+          <p class="small-note">No street address published — service-area business.</p>
         </div>
-        <form class="form contact-card" id="contactForm">
+        <form class="form contact-card contact-form" id="contactForm">
           <h3>Tell us what&rsquo;s happening</h3>
-          <label for="fName">Name</label><input id="fName" name="name" required autocomplete="name" placeholder="Your name">
-          <label for="fContact">Phone or email</label><input id="fContact" name="contact" required placeholder="How we reach you">
-          <label for="fTown">Town</label><input id="fTown" name="town" required placeholder="e.g. Penn Yan, Canandaigua, Rochester">
+          <label for="fName">Name</label><input id="fName" name="name" required autocomplete="name" placeholder="Your name" data-field="name">
+          <label for="fContact">Phone or email</label><input id="fContact" name="contact" required placeholder="How we reach you" data-field="contact">
+          <label for="fTown">Town</label><input id="fTown" name="town" required placeholder="e.g. Penn Yan, Canandaigua, Rochester" data-field="town">
           <label for="fIssue">Issue</label>
-          <select id="fIssue" name="issue"><option>Mice &amp; Rats</option><option>Bats in Attic</option><option>Raccoons in Attic</option><option>Squirrels in Attic</option><option>Groundhogs / Skunks / Opossums / Birds</option><option>Exclusion / Attic Restoration</option><option>Commercial</option><option>Other</option></select>
-          <label for="fMsg">What are you seeing or hearing?</label><textarea id="fMsg" name="message" placeholder="Where, when, and what signs — scratching, droppings, odor, entry hole…"></textarea>
+          <select id="fIssue" name="issue" data-field="issue"><option>Mice &amp; Rats</option><option>Bats in Attic</option><option>Raccoons in Attic</option><option>Squirrels in Attic</option><option>Groundhogs / Skunks / Opossums / Birds</option><option>Exclusion / Attic Restoration</option><option>Commercial</option><option>Other</option></select>
+          <label for="fMsg">What are you seeing or hearing?</label><textarea id="fMsg" name="message" placeholder="Where, when, and what signs — scratching, droppings, odor, entry hole…" data-field="message"></textarea>
           <button class="btn red" type="submit">Submit to Request Inspection</button>
           <p class="form-note">We'll reply by phone or email.</p>
           <div class="form-success" id="formSuccess" role="status">Ready to send — your email app will open with the details filled in. If it doesn&rsquo;t open, email us directly at contact@rodentxwildlife.com.</div>
@@ -242,6 +243,7 @@
     <h2>What we do</h2><ul><li>Full entry-point survey — foundation, doors, vents, roofline, utility penetrations</li><li>Removal matched to the building and the infestation</li><li>Harborage reduction guidance — what to clear, seal, and store differently</li><li>Monitoring until activity stops</li></ul>
     <h2>What we seal</h2><p>Foundation gaps, door sweeps, vent covers, pipe and wire penetrations, garage and sill gaps, roofline openings. Every seal is listed in writing — what was sealed, and with what.</p>
     <div class="callout"><strong>Where it applies:</strong> Homes, rentals, restaurants, warehouses, wineries &amp; breweries, and other commercial buildings across the Finger Lakes Region.</div>
+    <p class="next-step">Next: <a class="link" href="#/inspection">Book an inspection <span class="arr">→</span></a> &nbsp;·&nbsp; <a class="link" href="#/exclusion">Exclusion <span class="arr">→</span></a></p>
   </div><aside class="side-card"><h3>Request inspection</h3><p>Tell us the town and the signs. Same-day when available.</p><ul><li>Phone: (585) 555-0100</li><li>Email: contact@rodentxwildlife.com</li></ul><p><a class="btn red" href="#/contact">Request Inspection</a></p><p class="small-note">Some exclusion work carries a warranty — coverage for the property is reviewed with you before service begins.</p></aside></div></div>
 </section>
 
@@ -253,6 +255,7 @@
     <h2>What we do</h2><ul><li>Inspection + roost-entry identification</li><li>Exclusion-first approach — one-way exits where appropriate, then sealing</li><li>Cleanout and disinfection options for affected attic areas</li></ul>
     <div class="callout black"><p><strong>Timing restrictions apply.</strong> Bat work has timing restrictions that are explained before work. We will tell you what can be done now, what must wait, and why — before any work begins.</p></div>
     <h2>What we seal</h2><p>Roofline gaps, soffit and fascia openings, vent and chimney penetrations, siding and trim gaps. Sealed entries are documented in writing.</p>
+    <p class="next-step">Next: <a class="link" href="#/resources">Bat timing in Resources <span class="arr">→</span></a> &nbsp;·&nbsp; <a class="link" href="#/contact">Request inspection <span class="arr">→</span></a></p>
   </div><aside class="side-card"><h3>Request inspection</h3><p>Bats need timing. Tell us what you&rsquo;re seeing and we&rsquo;ll explain the next step.</p><ul><li>Phone: (585) 555-0100</li><li>Email: contact@rodentxwildlife.com</li></ul><p><a class="btn red" href="#/contact">Request Inspection</a></p></aside></div></div>
 </section>
 
@@ -263,6 +266,7 @@
     <h2>Signs</h2><ul><li>Heavy thumping or movement in attic, especially at night</li><li>Torn roof vents, soffits, or fascia; entry holes in roofline</li><li>Damaged or flattened insulation, odor, droppings</li></ul>
     <h2>What we do</h2><ul><li>Removal + entry identification</li><li>Cleanout + disinfection options for affected areas</li><li>Insulation removal / installation options where needed</li></ul>
     <h2>What we seal</h2><p>Roof vents, soffits, fascia, chimney and vent penetrations, roofline gaps — with durable, animal-proof materials, documented in writing.</p>
+    <p class="next-step">Next: <a class="link" href="#/restoration">Attic Restoration <span class="arr">→</span></a> &nbsp;·&nbsp; <a class="link" href="#/contact">Request inspection <span class="arr">→</span></a></p>
   </div><aside class="side-card"><h3>Request inspection</h3><p>Same-day when available — best to call or submit a form.</p><ul><li>Phone: (585) 555-0100</li><li>Email: contact@rodentxwildlife.com</li></ul><p><a class="btn red" href="#/contact">Request Inspection</a></p><p class="small-note">Some exclusion work carries a warranty — coverage for the property is reviewed with you before service begins.</p></aside></div></div>
 </section>
 
@@ -273,6 +277,7 @@
     <h2>Signs</h2><ul><li>Daytime scratching, running, or gnawing in attic or soffits</li><li>Chewed entry hole in fascia, soffit, or roofline</li><li>Nesting material, droppings, or damaged insulation</li></ul>
     <h2>What we do</h2><ul><li>Entry location + removal</li><li>Nesting removal + cleanout options</li><li>Soffit / fascia repair guidance and sealing</li></ul>
     <h2>What we seal</h2><p>Soffits, fascia, roofline gaps, vent covers, and any secondary entries found on inspection — listed in writing.</p>
+    <p class="next-step">Next: <a class="link" href="#/exclusion">Exclusion <span class="arr">→</span></a> &nbsp;·&nbsp; <a class="link" href="#/contact">Request inspection <span class="arr">→</span></a></p>
   </div><aside class="side-card"><h3>Request inspection</h3><p>Tell us the town and when you hear it. Daytime noise points to squirrels.</p><ul><li>Phone: (585) 555-0100</li><li>Email: contact@rodentxwildlife.com</li></ul><p><a class="btn red" href="#/contact">Request Inspection</a></p></aside></div></div>
 </section>
 
@@ -282,6 +287,7 @@
   <div class="detail-grid"><div>
     <h2>What we cover</h2><ul><li><strong>Groundhogs</strong> — burrows near foundations, sheds, and gardens</li><li><strong>Skunks</strong> — denning under porches, sheds, and crawl spaces</li><li><strong>Opossums</strong> — crawl space, garage, and outbuilding visitors</li><li><strong>Birds</strong> — vent, chimney, and soffit nesting</li></ul>
     <h2>What we do</h2><ul><li>Species-correct removal</li><li>Entry + harborage sealing</li><li>Prevention for the next season</li></ul>
+    <p class="next-step">Next: <a class="link" href="#/resources">Identify the animal <span class="arr">→</span></a> &nbsp;·&nbsp; <a class="link" href="#/contact">Request inspection <span class="arr">→</span></a></p>
   </div><aside class="side-card"><h3>Request inspection</h3><p>Describe the animal and where it&rsquo;s denning or nesting.</p><ul><li>Phone: (585) 555-0100</li><li>Email: contact@rodentxwildlife.com</li></ul><p><a class="btn red" href="#/contact">Request Inspection</a></p></aside></div></div>
 </section>
 
@@ -303,6 +309,7 @@
     <h2>What we cover</h2><ul><li>Restaurants, retail, offices, warehouses, industrial sites</li><li>Wineries &amp; breweries — production, storage, and tasting spaces</li><li>Multi-unit and property-managed buildings</li></ul>
     <h2>What you get</h2><ul><li>Entry-point survey + sealing plan</li><li>Documented findings, seals, and follow-up</li><li>Monitoring cadence agreed before work</li><li>The same X Standard: Inspect / Remove / Exclude / Monitor</li></ul>
     <h2>How it works</h2><p>We start with an inspection and a sealing plan, then removal, exclusion, and — where needed — restoration. Findings, seals, and follow-up are documented in writing, with a monitoring cadence agreed before work.</p>
+    <p class="next-step">Next: <a class="link" href="#/services">All services <span class="arr">→</span></a> &nbsp;·&nbsp; <a class="link" href="#/contact">Request inspection <span class="arr">→</span></a></p>
   </div><aside class="side-card"><h3>Request inspection</h3><p>Tell us the facility type and the issue.</p><ul><li>Phone: (585) 555-0100</li><li>Email: contact@rodentxwildlife.com</li></ul><p><a class="btn red" href="#/contact">Request Inspection</a></p></aside></div></div>
 </section>
 
@@ -318,12 +325,27 @@
 <!-- ================= DETAIL: CONTACT ================= -->
 <section data-page="contact" class="page" aria-label="Contact">
   <div class="wrap"><div class="detail-hero"><p class="breadcrumb"><a href="#/">Home</a> / Contact</p><h1>Request an<br><span class="red">Inspection.</span></h1><p class="lede">Tell us the animal, the town, and where you&rsquo;re hearing or seeing it. We reply by phone or email. Same-day when available — best to call or submit a form.</p></div>
-  <div class="detail-grid"><div>
-    <h2>Call or email</h2><p class="contact-lines"><span class="contact-line"><strong>Phone:</strong> <a href="tel:+15855550100">(585) 555-0100</a></span><span class="contact-line"><strong>Email:</strong> <a href="mailto:contact@rodentxwildlife.com">contact@rodentxwildlife.com</a></span><span class="contact-line"><strong>Area:</strong> Finger Lakes Region, NY only</span></p>
-    <p>No street address published — service-area business.</p>
-    <p>Some exclusion work carries a warranty — coverage for the property is reviewed with you before service begins.</p>
-    <p>NYS NWCO license renewal in process.</p>
-  </div><aside class="side-card"><h3>Use the form on Home</h3><p>The full form lives on the home page so you never lose it.</p><p><a class="btn red" href="#/">Back to Home Form <span class="arr">→</span></a></p></aside></div></div>
+  <div class="contact-grid">
+    <div class="contact-card">
+      <h3>Call or email</h3>
+      <p class="contact-lines"><span class="contact-line"><strong>Phone:</strong> <a href="tel:+15855550100">(585) 555-0100</a></span><span class="contact-line"><strong>Email:</strong> <a href="mailto:contact@rodentxwildlife.com">contact@rodentxwildlife.com</a></span><span class="contact-line"><strong>Area:</strong> Finger Lakes Region, NY only</span></p>
+      <p>Same-day when available — best to call or submit a form.</p>
+      <p class="small-note">No street address published — service-area business. Some exclusion work carries a warranty — coverage for the property is reviewed with you before service begins.</p>
+      <p class="small-note">NYS NWCO license renewal in process.</p>
+    </div>
+    <form class="form contact-card contact-form" id="contactForm2">
+      <h3>Tell us what&rsquo;s happening</h3>
+      <label for="fName2">Name</label><input id="fName2" name="name" required autocomplete="name" placeholder="Your name" data-field="name">
+      <label for="fContact2">Phone or email</label><input id="fContact2" name="contact" required placeholder="How we reach you" data-field="contact">
+      <label for="fTown2">Town</label><input id="fTown2" name="town" required placeholder="e.g. Penn Yan, Canandaigua, Rochester" data-field="town">
+      <label for="fIssue2">Issue</label>
+      <select id="fIssue2" name="issue" data-field="issue"><option>Mice &amp; Rats</option><option>Bats in Attic</option><option>Raccoons in Attic</option><option>Squirrels in Attic</option><option>Groundhogs / Skunks / Opossums / Birds</option><option>Exclusion / Attic Restoration</option><option>Commercial</option><option>Other</option></select>
+      <label for="fMsg2">What are you seeing or hearing?</label><textarea id="fMsg2" name="message" placeholder="Where, when, and what signs — scratching, droppings, odor, entry hole…" data-field="message"></textarea>
+      <button class="btn red" type="submit">Submit to Request Inspection</button>
+      <p class="form-note">We'll reply by phone or email.</p>
+      <div class="form-success" id="formSuccess2" role="status">Ready to send — your email app will open with the details filled in. If it doesn&rsquo;t open, email us directly at contact@rodentxwildlife.com.</div>
+    </form>
+  </div></div>
 </section>
 
 <!-- ================= HUB: WILDLIFE ================= -->
@@ -401,7 +423,8 @@
     <ul><li><strong>01 / Inspect</strong> — <a href="#/inspection">Find the entry, the run, and the damage</a>. Written findings before work.</li><li><strong>02 / Remove</strong> — <a href="#/removal">Humane, lawful removal</a> matched to the species and the season.</li><li><strong>03 / Exclude</strong> — <a href="#/exclusion">The seal</a>. Durable, animal-proof materials — the X that means it stays shut.</li><li><strong>04 / Monitor</strong> — <a href="#/monitoring">Check the seal holds</a> and the activity stops.</li></ul>
     <h2>What you get in writing</h2><p>Findings, what was removed, what was sealed and with what, and any follow-up. Some exclusion work carries a warranty — coverage for the property is reviewed with you before service begins.</p>
     <h2>The comeback</h2><p>RodentX is back — rebuilt properly. Same X. Higher standard. Service area: Finger Lakes Region, NY only. No street address published — service-area business.</p>
-    <h2>Licensing</h2><p>NYS NWCO license renewal in process. We will confirm status with you before service.</p>
+    <h2>Licensing</h2><p>NYS NWCO license renewal in process. We will confirm licensing status with you before service.</p>
+    <p class="next-step">Next: <a class="link" href="#/services">Browse services <span class="arr">→</span></a> &nbsp;·&nbsp; <a class="link" href="#/contact">Request inspection <span class="arr">→</span></a></p>
   </div><aside class="side-card"><h3>Request inspection</h3><p>See the standard in person — starting with an inspection.</p><ul><li>Phone: (585) 555-0100</li><li>Email: contact@rodentxwildlife.com</li></ul><p><a class="btn red" href="#/contact">Request Inspection</a></p></aside></div></div>
 </section>
 
@@ -425,14 +448,14 @@
 
   <h2 id="faq">Frequently asked questions</h2>
   <div class="faq">
-    <div class="faq-item"><button class="faq-q">How fast can you come? <span>+</span></button><div class="faq-a">Same-day when available — best to call or submit a form. We confirm timing by phone or email before we come.</div></div>
-    <div class="faq-item"><button class="faq-q">Do you seal the entry, or just remove the animal? <span>+</span></button><div class="faq-a">Both. Removal without sealing is a repeat visit. Our standard is Inspect / Remove / Exclude / Monitor — the seal is the point.</div></div>
-    <div class="faq-item"><button class="faq-q">Is there a warranty on exclusion work? <span>+</span></button><div class="faq-a">Some exclusion work carries a warranty — coverage for the property is reviewed with you before service begins.</div></div>
-    <div class="faq-item"><button class="faq-q">What about bats — are there timing restrictions? <span>+</span></button><div class="faq-a">Yes — timing restrictions apply for bats and are explained before work. We will tell you what can be done now and what must wait.</div></div>
-    <div class="faq-item"><button class="faq-q">Do you publish pricing? <span>+</span></button><div class="faq-a">No. Every building and every entry is different. We inspect, then give you the scope in writing before work begins.</div></div>
-    <div class="faq-item"><button class="faq-q">Are you licensed? <span>+</span></button><div class="faq-a">We will confirm licensing status with you before service.</div></div>
-    <div class="faq-item"><button class="faq-q">What areas do you serve? <span>+</span></button><div class="faq-a">Finger Lakes Region, NY only — five hubs plus the Corning–Elmira edge. Smaller towns are served inside these hubs.</div></div>
-    <div class="faq-item"><button class="faq-q">How do I request an inspection? <span>+</span></button><div class="faq-a">Call (585) 555-0100 or submit the form — tell us the animal, the town, and where you&rsquo;re hearing or seeing it. We reply by phone or email.</div></div>
+    <div class="faq-item"><button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-a4">How fast can you come? <span class="faq-icon" aria-hidden="true">+</span></button><div class="faq-a" id="faq-a4">Same-day when available — best to call or submit a form. We confirm timing by phone or email before we come.</div></div>
+    <div class="faq-item"><button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-a5">Do you seal the entry, or just remove the animal? <span class="faq-icon" aria-hidden="true">+</span></button><div class="faq-a" id="faq-a5">Both. Removal without sealing is a repeat visit. Our standard is Inspect / Remove / Exclude / Monitor — the seal is the point.</div></div>
+    <div class="faq-item"><button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-a6">Is there a warranty on exclusion work? <span class="faq-icon" aria-hidden="true">+</span></button><div class="faq-a" id="faq-a6">Some exclusion work carries a warranty — coverage for the property is reviewed with you before service begins.</div></div>
+    <div class="faq-item"><button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-a7">What about bats — are there timing restrictions? <span class="faq-icon" aria-hidden="true">+</span></button><div class="faq-a" id="faq-a7">Yes — timing restrictions apply for bats and are explained before work. We will tell you what can be done now and what must wait.</div></div>
+    <div class="faq-item"><button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-a8">Do you publish pricing? <span class="faq-icon" aria-hidden="true">+</span></button><div class="faq-a" id="faq-a8">No. Every building and every entry is different. We inspect, then give you the scope in writing before work begins.</div></div>
+    <div class="faq-item"><button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-a9">Are you licensed? <span class="faq-icon" aria-hidden="true">+</span></button><div class="faq-a" id="faq-a9">We will confirm licensing status with you before service.</div></div>
+    <div class="faq-item"><button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-a10">What areas do you serve? <span class="faq-icon" aria-hidden="true">+</span></button><div class="faq-a" id="faq-a10">Finger Lakes Region, NY only — five hubs plus the Corning–Elmira edge. Smaller towns are served inside these hubs.</div></div>
+    <div class="faq-item"><button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-a11">How do I request an inspection? <span class="faq-icon" aria-hidden="true">+</span></button><div class="faq-a" id="faq-a11">Call (585) 555-0100 or submit the form — tell us the animal, the town, and where you&rsquo;re hearing or seeing it. We reply by phone or email.</div></div>
   </div>
   <p><a class="btn red" href="#/contact">Request Inspection</a></p>
   </div>
@@ -449,7 +472,7 @@
       </div>
       <div><h4>Wildlife Removal</h4><ul><li><a href="#/wildlife">All Wildlife Removal</a></li><li><a href="#/mice-rats">Mice &amp; Rats</a></li><li><a href="#/bats">Bats in Attic</a></li><li><a href="#/raccoons">Raccoons in Attic</a></li><li><a href="#/squirrels">Squirrels in Attic</a></li><li><a href="#/other-wildlife">Other Wildlife</a></li></ul></div>
       <div><h4>Services</h4><ul><li><a href="#/services">All Services</a></li><li><a href="#/inspection">Inspection</a></li><li><a href="#/removal">Removal</a></li><li><a href="#/exclusion">Exclusion</a></li><li><a href="#/restoration">Attic Restoration</a></li><li><a href="#/monitoring">Monitoring</a></li><li><a href="#/commercial">Commercial</a></li></ul></div>
-      <div><h4>Explore</h4><ul><li><a href="#/">Home</a></li><li><a href="#/territory">Service Areas</a></li><li><a href="#/why">Why RodentX</a></li><li><a href="#/resources">Resources</a></li><li><a href="#/faq">FAQ</a></li><li><a href="#/contact">Request Inspection</a></li></ul></div>
+      <div><h4>Explore</h4><ul><li><a href="#/">Home</a></li><li><a href="#/territory">Service Areas</a></li><li><a href="#/why">Why RodentX</a></li><li><a href="#/resources">Resources</a></li><li><a href="#/faq" data-nav="resources">FAQ</a></li><li><a href="#/contact">Request Inspection</a></li></ul></div>
       <div><h4>Contact</h4><ul><li><a href="tel:+15855550100">(585) 555-0100</a></li><li><a href="mailto:contact@rodentxwildlife.com">contact@rodentxwildlife.com</a></li><li>Finger Lakes Region, NY only</li><li>No street address published — service-area business.</li><li>NYS NWCO license renewal in process</li></ul></div>
     </div>
     <div class="footer-seal" aria-hidden="true">X</div>
@@ -457,7 +480,7 @@
   </div>
 </footer>
 
-<script src="assets/logos.js?v=5"></script>
-<script src="app.js?v=5"></script>
+<script src="assets/logos.js?v=6"></script>
+<script src="app.js?v=6"></script>
 </body>
 </html>

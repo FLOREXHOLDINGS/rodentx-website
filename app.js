@@ -15,6 +15,54 @@
   setLogo('footerLogo', logos.LOGO_REV, 'RODENTX — WILDLIFE MANAGEMENT, reversed on black');
   setLogo('comebackLogoB', logos.LOGO_REV, 'RODENTX — WILDLIFE MANAGEMENT');
 
+
+  // --- Per-route document title + meta description (one H1/title per view) ---
+  var TITLES = {
+    home: 'RodentX Wildlife Management — Finger Lakes Wildlife Removal | Mice & Rats, Bats, Raccoons, Squirrels',
+    wildlife: 'Wildlife Removal by Animal — RodentX Wildlife Management',
+    'mice-rats': 'Mice & Rats Removal — RodentX Wildlife Management',
+    bats: 'Bats in Attic Removal — RodentX Wildlife Management',
+    raccoons: 'Raccoons in Attic Removal — RodentX Wildlife Management',
+    squirrels: 'Squirrels in Attic Removal — RodentX Wildlife Management',
+    'other-wildlife': 'Groundhogs, Skunks, Opossums & Birds — RodentX Wildlife Management',
+    services: 'Services by Job — RodentX Wildlife Management',
+    inspection: 'Inspection — RodentX Wildlife Management',
+    removal: 'Removal — RodentX Wildlife Management',
+    exclusion: 'Exclusion — RodentX Wildlife Management',
+    restoration: 'Attic Restoration — RodentX Wildlife Management',
+    monitoring: 'Monitoring — RodentX Wildlife Management',
+    commercial: 'Commercial Wildlife Programs — RodentX Wildlife Management',
+    territory: 'Service Areas — Finger Lakes Region — RodentX Wildlife Management',
+    why: 'Why RodentX — RodentX Wildlife Management',
+    resources: 'Resources: Identify It, Prevent It, FAQ — RodentX Wildlife Management',
+    contact: 'Request an Inspection — RodentX Wildlife Management'
+  };
+  var DESCRIPTIONS = {
+    home: 'RodentX Wildlife Management — Finger Lakes wildlife removal and exclusion. Mice & rats, bats in attic, raccoons in attic, squirrels in attic, exclusion + attic restoration. RodentX is back — rebuilt properly.',
+    wildlife: 'Wildlife removal by animal: mice & rats, bats, raccoons, squirrels, groundhogs, skunks, opossums, birds. Signs, what we do, what we seal.',
+    'mice-rats': 'Mice & rats: full rodent programs — entry, harborage, removal, seal, monitor. Finger Lakes Region, NY.',
+    bats: 'Bats in attic: careful, lawful, season-aware work. Timing restrictions explained before work.',
+    raccoons: 'Raccoons in attic: remove, clean, seal — and keep them out.',
+    squirrels: 'Squirrels in attic: daytime noise, chewed entry. Find the entry, remove, seal it properly.',
+    'other-wildlife': 'Groundhogs, skunks, opossums, birds: yard, crawl space, chimney, and vent wildlife, handled species-correctly.',
+    services: 'Services by job: inspection, removal, exclusion, attic restoration, monitoring, commercial programs. One job at a time, done properly.',
+    inspection: 'Inspection: find the entry, the run, and the damage — written findings before work.',
+    removal: 'Removal: humane, lawful, species-correct removal. Removal alone does not keep animals out — exclusion is the point.',
+    exclusion: 'Exclusion: the seal that lasts. Durable, animal-proof materials — every seal listed in writing.',
+    restoration: 'Attic restoration: cleanouts, insulation removal, disinfection, insulation installation.',
+    monitoring: 'Monitoring: proof the seal holds. Follow-up check, signs to watch, next step if activity returns.',
+    commercial: 'Commercial wildlife programs for businesses that can\u2019t afford a sighting, a shutdown, or a repeat. Documented, discreet, sealed.',
+    territory: 'Service areas: Finger Lakes Region, NY only. Five hubs, one standard. Keuka is home — Penn Yan / Yates County.',
+    why: 'Why RodentX: the X Standard, what you get in writing, the comeback, licensing.',
+    resources: 'Resources: identify the animal, prevention checklist, and straight answers to frequently asked questions.',
+    contact: 'Request an inspection: tell us the animal, the town, and where you are hearing or seeing it. We reply by phone or email.'
+  };
+  function updateMeta(name) {
+    if (TITLES[name]) document.title = TITLES[name];
+    var meta = document.querySelector('meta[name="description"]');
+    if (meta && DESCRIPTIONS[name]) meta.setAttribute('content', DESCRIPTIONS[name]);
+  }
+
   // --- Hash routing: #/ , #/mice-rats, #/bats, ... ---
   var pages = Array.prototype.slice.call(document.querySelectorAll('[data-page]'));
   var navLinks = Array.prototype.slice.call(document.querySelectorAll('[data-nav]'));
@@ -55,6 +103,7 @@
       pages.forEach(function (p) { p.classList.toggle('active', p.getAttribute('data-page') === 'home'); });
       name = 'home';
     }
+    updateMeta(name);
     navLinks.forEach(function (a) {
       var isCurrent = a.getAttribute('data-nav') === name;
       if (isCurrent) a.setAttribute('aria-current', 'page');
@@ -63,7 +112,8 @@
     if (scrollTarget) {
       setTimeout(function () {
         var el = document.getElementById(scrollTarget);
-        if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        if (el) el.scrollIntoView({ behavior: reduced ? 'auto' : 'smooth', block: 'start' });
       }, 60);
     } else {
       window.scrollTo(0, 0);
@@ -115,11 +165,20 @@
       toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
       document.body.classList.toggle('menu-open', open);
       setToggleLabel(open);
+      if (open) {
+        var firstLink = menu.querySelector('a');
+        if (firstLink) firstLink.focus();
+      }
     });
     document.addEventListener('keydown', function (e) {
       if (e.key === 'Escape' && menu.classList.contains('open')) closeMenu();
     });
   }
+
+  // --- Close mobile menu when resizing up to desktop (avoids stuck scroll lock) ---
+  window.addEventListener('resize', function () {
+    if (window.innerWidth > 768 && menu && menu.classList.contains('open')) closeMenu();
+  });
 
   // --- Header shadow on scroll ---
   var header = document.querySelector('.site-header');
@@ -133,7 +192,8 @@
   var toTop = document.getElementById('toTop');
   if (toTop) {
     toTop.addEventListener('click', function () {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      window.scrollTo({ top: 0, behavior: reduced ? 'auto' : 'smooth' });
     });
   }
 
@@ -164,21 +224,31 @@
     if (!btn) return;
     btn.addEventListener('click', function () {
       var wasOpen = item.classList.contains('open');
-      document.querySelectorAll('.faq-item.open').forEach(function (o) { o.classList.remove('open'); });
-      if (!wasOpen) item.classList.add('open');
+      document.querySelectorAll('.faq-item').forEach(function (o) {
+        o.classList.remove('open');
+        var b = o.querySelector('.faq-q');
+        if (b) b.setAttribute('aria-expanded', 'false');
+      });
+      if (!wasOpen) {
+        item.classList.add('open');
+        btn.setAttribute('aria-expanded', 'true');
+      }
     });
   });
 
-  // --- Contact form: opens email with the details filled in ---
-  var form = document.getElementById('contactForm');
-  if (form) {
+  // --- Contact forms (home + contact page): open email with details filled in ---
+  document.querySelectorAll('.contact-form').forEach(function (form) {
     form.addEventListener('submit', function (e) {
       e.preventDefault();
-      var name = document.getElementById('fName').value.trim();
-      var contact = document.getElementById('fContact').value.trim();
-      var town = document.getElementById('fTown').value.trim();
-      var issue = document.getElementById('fIssue').value;
-      var msg = document.getElementById('fMsg').value.trim();
+      function val(field) {
+        var el = form.querySelector('[data-field="' + field + '"]');
+        return el ? el.value.trim() : '';
+      }
+      var name = val('name');
+      var contact = val('contact');
+      var town = val('town');
+      var issue = val('issue');
+      var msg = val('message');
       var subject = encodeURIComponent('Inspection request — ' + issue + ' — ' + town);
       var body = encodeURIComponent(
         'Name: ' + name + '\n' +
@@ -188,9 +258,9 @@
         'Details: ' + msg + '\n\n' +
         'Sent from rodentxwildlife.com contact form.'
       );
-      var success = document.getElementById('formSuccess');
+      var success = form.querySelector('.form-success');
       if (success) success.style.display = 'block';
       window.location.href = 'mailto:contact@rodentxwildlife.com?subject=' + subject + '&body=' + body;
     });
-  }
+  });
 })();
