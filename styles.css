@@ -77,16 +77,16 @@ h1,h2,h3,h4{padding-bottom:4px}
 .nav-toggle.open .burger span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
 /* Mobile menu: FULL-SCREEN BLACK OVERLAY — covers page entirely, never peeks. */
 body.menu-open{overflow:hidden}
-.mobile-menu{position:fixed;inset:0;top:88px;bottom:0;z-index:60;background:#0A0A0B;border-top:4px solid var(--red);padding:32px 24px 40px;overflow-y:auto;opacity:0;visibility:hidden;transform:translateY(-12px);transition:opacity 250ms ease,transform 250ms ease,visibility 0s linear 250ms}
+.mobile-menu{position:fixed;inset:0;top:88px;bottom:0;z-index:60;background:#0A0A0B;border-top:4px solid var(--red);padding:40px 24px 48px;overflow-y:auto;opacity:0;visibility:hidden;transform:translateY(-12px);transition:opacity 250ms ease,transform 250ms ease,visibility 0s linear 250ms}
 .mobile-menu.open{opacity:1;visibility:visible;transform:translateY(0);transition:opacity 250ms ease,transform 250ms ease,visibility 0s}
-.mm-eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#9AA0A6;margin:0 0 16px}
-.mm-eyebrow::before{content:"";display:inline-block;width:24px;height:2px;background:var(--red);vertical-align:middle;margin-right:8px}
-.mobile-menu a{display:flex;align-items:baseline;gap:16px;padding:20px 8px;text-decoration:none;font-weight:800;font-size:26px;line-height:1.2;color:#fff;border-bottom:1px solid #262628;transition:background 180ms ease}
-.mobile-menu a:hover,.mobile-menu a:focus-visible{background:#1A1A1C;text-decoration:underline;text-decoration-color:var(--red);text-underline-offset:4px}
-.mobile-menu a .mi{font-family:var(--mono);font-size:14px;font-weight:400;color:var(--red);letter-spacing:.12em;flex-shrink:0}
-.mobile-menu a[aria-current="page"]{box-shadow:inset 4px 0 0 var(--red);background:#1A1A1C}
-.mobile-menu-foot{padding:24px 4px 0;display:flex;flex-direction:column;gap:16px;align-items:stretch;border-top:1px solid #262628;margin-top:24px}
-.mobile-menu-foot .mm-phone{font-size:20px;font-weight:800;color:#fff;text-decoration:none;text-align:center;padding:4px 0}
+.mm-list{display:flex;flex-direction:column;gap:8px}
+.mm-list a{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:22px 0;text-decoration:none;font-weight:700;font-size:24px;line-height:1.2;color:#fff;transition:color 180ms ease}
+.mm-list a:hover,.mm-list a:focus-visible{color:#fff;text-decoration:underline;text-decoration-color:var(--red);text-underline-offset:6px}
+.mm-list a .mm-arr{color:var(--red);font-size:18px;font-weight:700;flex-shrink:0}
+.mm-list a[aria-current="page"]{color:#fff}
+.mm-list a[aria-current="page"] .mm-arr{color:var(--red)}
+.mobile-menu-foot{padding:32px 0 0;display:flex;flex-direction:column;gap:16px;align-items:stretch;border-top:1px solid #262628;margin-top:32px}
+.mobile-menu-foot .mm-phone{font-size:20px;font-weight:700;color:#fff;text-decoration:none;text-align:center;padding:4px 0}
 .mobile-menu-foot .mm-phone:hover{text-decoration:underline;text-decoration-color:var(--red);text-underline-offset:4px}
 .mobile-menu-foot .mm-cta{display:block;background:var(--red);color:#fff;text-align:center;padding:16px 12px;border-radius:2px;font-weight:800;font-size:18px;text-decoration:none}
 .mobile-menu-foot .mm-cta:hover{background:#A00D26}
@@ -427,14 +427,6 @@ footer{background:#0A0A0B;color:#E5E7EB;padding:var(--s7) 0 var(--s4);border-top
 .link:hover .arr{transform:translateX(4px)}
 .on-dark-link{color:#fff}
 .on-dark-link:hover{color:#E5E7EB}
-/* Mobile menu groups: one consistent system — numbers restart inside each group. */
-.mm-group{border-top:1px solid #262628;margin-top:var(--s3);padding-top:var(--s3)}
-.mm-group:first-of-type{border-top:0;margin-top:0;padding-top:0}
-.mm-group-title{font-family:var(--mono);font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#9AA0A6;margin:0 0 4px}
-.mm-group-title::before{content:"";display:inline-block;width:24px;height:2px;background:var(--red);vertical-align:middle;margin-right:8px}
-.mm-home{display:flex;align-items:baseline;gap:16px;padding:20px 8px;text-decoration:none;font-weight:800;font-size:26px;line-height:1.2;color:#fff;border-bottom:1px solid #262628}
-.mm-group-plain a{font-size:22px}
-.mm-group .mobile-menu-foot{border-top:0}
 /* Resources: ID guide + prevention checklist. */
 .id-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--s3);margin:var(--s3) 0 var(--s4)}
 .id-card{border:1px solid var(--line);background:#fff;padding:var(--s4);display:flex;flex-direction:column;gap:var(--s1);transition:border-color 200ms ease,transform 200ms ease,box-shadow 200ms ease}
