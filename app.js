@@ -1,8 +1,9 @@
-// RodentX V2 — hash routing, logos, issue selector, mobile nav, FAQ, form
+// RodentX V2 — hash routing, logos, issue selector, mobile nav, FAQ, form,
+// header shadow on scroll, reveal-on-scroll, back-to-top
 (function () {
   'use strict';
 
-  // --- Exact logos (from assets/logos.js, byte-for-byte originals) ---
+  // --- Logos (from assets/logos.js — same artwork, background made transparent) ---
   var logos = window.RODENTX_LOGOS || {};
   function setLogo(id, src, fallbackAlt) {
     var el = document.getElementById(id);
@@ -17,16 +18,24 @@
   // --- Hash routing: #/ , #/mice-rats, #/bats, ... ---
   var pages = Array.prototype.slice.call(document.querySelectorAll('[data-page]'));
   var navLinks = Array.prototype.slice.call(document.querySelectorAll('[data-nav]'));
+  var menu = document.getElementById('mobileMenu');
+  var toggle = document.getElementById('navToggle');
+
+  function closeMenu() {
+    if (menu) menu.classList.remove('open');
+    if (toggle) {
+      toggle.classList.remove('open');
+      toggle.setAttribute('aria-expanded', 'false');
+    }
+  }
 
   function routeFromHash() {
     var hash = (window.location.hash || '#/').replace(/^#\/?/, '');
     // Contact form lives on home; #/contact shows the contact detail page.
     // Home sub-anchors (territory etc.) stay on home.
     var name = hash.split('/')[0].split('?')[0] || 'home';
-    if (name === 'territory') {
-      // Territory preview is on home; the full territory page is #/territory too — show it.
-      name = 'territory';
-    }
+    var scrollTarget = null;
+    if (name === 'faq') { name = 'home'; scrollTarget = 'faq'; }
     if (name === '') name = 'home';
     var found = false;
     pages.forEach(function (p) {
@@ -43,14 +52,15 @@
       if (isCurrent) a.setAttribute('aria-current', 'page');
       else a.removeAttribute('aria-current');
     });
-    window.scrollTo(0, 0);
-    // Close mobile menu on navigation
-    var menu = document.getElementById('mobileMenu');
-    var toggle = document.getElementById('navToggle');
-    if (menu && menu.classList.contains('open')) {
-      menu.classList.remove('open');
-      if (toggle) toggle.setAttribute('aria-expanded', 'false');
+    if (scrollTarget) {
+      setTimeout(function () {
+        var el = document.getElementById(scrollTarget);
+        if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 60);
+    } else {
+      window.scrollTo(0, 0);
     }
+    closeMenu();
   }
 
   window.addEventListener('hashchange', routeFromHash);
@@ -63,13 +73,52 @@
     });
   });
 
-  // --- Mobile nav ---
-  var toggle = document.getElementById('navToggle');
-  var menu = document.getElementById('mobileMenu');
+  // --- Mobile nav: hamburger animates to X, menu slides down ---
   if (toggle && menu) {
     toggle.addEventListener('click', function () {
       var open = menu.classList.toggle('open');
+      toggle.classList.toggle('open', open);
       toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && menu.classList.contains('open')) closeMenu();
+    });
+  }
+
+  // --- Header shadow on scroll ---
+  var header = document.querySelector('.site-header');
+  function onScroll() {
+    if (header) header.classList.toggle('scrolled', window.scrollY > 8);
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  // --- Back to top ---
+  var toTop = document.getElementById('toTop');
+  if (toTop) {
+    toTop.addEventListener('click', function () {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+
+  // --- Reveal-on-scroll: fade + 12px rise, staggered per group ---
+  var revealTargets = document.querySelectorAll(
+    '.dossier, .x-step, .hub, .side-card, .contact-card, .faq-item, .section-head, .detail-hero'
+  );
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('revealed');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    revealTargets.forEach(function (el, i) {
+      el.classList.add('reveal');
+      // Stagger siblings inside the same grid by up to 180ms
+      el.style.transitionDelay = ((i % 4) * 60) + 'ms';
+      io.observe(el);
     });
   }
 

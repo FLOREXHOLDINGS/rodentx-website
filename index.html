@@ -30,19 +30,26 @@
     </nav>
     <a class="header-phone" href="tel:+15855550100">(585) 555-0100</a>
     <a class="header-cta" href="#/contact">Request Inspection</a>
-    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="mobileMenu">Menu ☰</button>
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="mobileMenu" aria-label="Toggle menu">
+      <span class="burger" aria-hidden="true"><span></span><span></span><span></span></span>
+      <span class="nav-toggle-label">Menu</span>
+    </button>
   </div>
   <div class="mobile-menu" id="mobileMenu">
-    <a href="#/">Home</a>
-    <a href="#/mice-rats">Mice &amp; Rats</a>
-    <a href="#/bats">Bats in Attic</a>
-    <a href="#/raccoons">Raccoons in Attic</a>
-    <a href="#/squirrels">Squirrels in Attic</a>
-    <a href="#/other-wildlife">Other Wildlife</a>
-    <a href="#/exclusion">Exclusion + Attic Restoration</a>
-    <a href="#/commercial">Commercial</a>
-    <a href="#/territory">Territory</a>
-    <a href="#/contact">Request Inspection</a>
+    <a href="#/" data-nav="home"><span class="mi">01</span>Home</a>
+    <a href="#/mice-rats" data-nav="mice-rats"><span class="mi">02</span>Mice &amp; Rats</a>
+    <a href="#/bats" data-nav="bats"><span class="mi">03</span>Bats in Attic</a>
+    <a href="#/raccoons" data-nav="raccoons"><span class="mi">04</span>Raccoons in Attic</a>
+    <a href="#/squirrels" data-nav="squirrels"><span class="mi">05</span>Squirrels in Attic</a>
+    <a href="#/other-wildlife" data-nav="other-wildlife"><span class="mi">06</span>Other Wildlife</a>
+    <a href="#/exclusion" data-nav="exclusion"><span class="mi">07</span>Exclusion + Attic Restoration</a>
+    <a href="#/commercial" data-nav="commercial"><span class="mi">08</span>Commercial</a>
+    <a href="#/territory" data-nav="territory"><span class="mi">09</span>Territory</a>
+    <div class="mobile-menu-foot">
+      <a class="mm-phone" href="tel:+15855550100">(585) 555-0100</a>
+      <a class="mm-cta" href="#/contact">Request Inspection</a>
+      <p>Finger Lakes Region, NY only</p>
+    </div>
   </div>
 </header>
 
@@ -108,12 +115,12 @@
         <p>Signs, what we do, what we seal — nothing generic.</p>
       </div>
       <div class="dossier-grid">
-        <article class="dossier flagship"><span class="big-x" aria-hidden="true">X</span><span class="tag"><b>FLAGSHIP</b> — MICE &amp; RATS</span><h3>Mice &amp; Rats</h3><p>The name is the promise. Full rodent programs for homes and businesses — entry, harborage, and seal.</p><ul><li>Entry-point survey + sealing plan</li><li>Removal + sanitation guidance</li><li>Monitoring until activity stops</li></ul><a class="link" href="#/mice-rats">Read the mice &amp; rats dossier →</a></article>
-        <article class="dossier"><span class="big-x" aria-hidden="true">X</span><span class="tag"><b>ATTIC</b> — BATS</span><h3>Bats in Attic</h3><p>Colonies in attics and wall voids. Careful, lawful, season-aware work.</p><ul><li>Inspection + roost identification</li><li>Exclusion-first approach</li><li>Timing restrictions explained before work</li></ul><a class="link" href="#/bats">Read the bats dossier →</a></article>
-        <article class="dossier"><span class="big-x" aria-hidden="true">X</span><span class="tag"><b>ATTIC</b> — RACCOONS</span><h3>Raccoons in Attic</h3><p>Heavy, destructive attic invaders. Remove, clean, seal — and keep them out.</p><ul><li>Removal + entry repair</li><li>Cleanout + disinfection options</li><li>Roofline + vent sealing</li></ul><a class="link" href="#/raccoons">Read the raccoons dossier →</a></article>
-        <article class="dossier"><span class="big-x" aria-hidden="true">X</span><span class="tag"><b>ATTIC</b> — SQUIRRELS</span><h3>Squirrels in Attic</h3><p>Daytime attic noise, chewed entries, nesting in insulation and soffits.</p><ul><li>Entry location + sealing</li><li>Nesting removal + cleanout</li><li>Soffit / fascia repair guidance</li></ul><a class="link" href="#/squirrels">Read the squirrels dossier →</a></article>
-        <article class="dossier"><span class="big-x" aria-hidden="true">X</span><span class="tag"><b>STRUCTURE</b> — EXCLUSION</span><h3>Exclusion + Attic Restoration</h3><p>The work that makes removal last: seal the building, restore the attic.</p><ul><li>Structural exclusion</li><li>Cleanouts, insulation removal, disinfection</li><li>Insulation installation</li></ul><a class="link" href="#/exclusion">Read the exclusion dossier →</a></article>
-        <article class="dossier"><span class="big-x" aria-hidden="true">X</span><span class="tag"><b>OTHER</b> — WILDLIFE</span><h3>Groundhogs / Skunks / Opossums / Birds</h3><p>Yard, crawl space, chimney, and vent wildlife across the Finger Lakes.</p><ul><li>Species-correct removal</li><li>Entry + harborage sealing</li><li>Prevention for the next season</li></ul><a class="link" href="#/other-wildlife">Read the other-wildlife dossier →</a></article>
+        <article class="dossier flagship"><span class="big-x" aria-hidden="true">X</span><span class="tag"><b>FLAGSHIP</b> — MICE &amp; RATS</span><h3>Mice &amp; Rats</h3><p>The name is the promise. Full rodent programs for homes and businesses — entry, harborage, and seal.</p><ul><li>Entry-point survey + sealing plan</li><li>Removal + sanitation guidance</li><li>Monitoring until activity stops</li></ul><a class="link" href="#/mice-rats">Read the mice &amp; rats dossier <span class="arr">→</span></a></article>
+        <article class="dossier"><span class="big-x" aria-hidden="true">X</span><span class="tag"><b>ATTIC</b> — BATS</span><h3>Bats in Attic</h3><p>Colonies in attics and wall voids. Careful, lawful, season-aware work.</p><ul><li>Inspection + roost identification</li><li>Exclusion-first approach</li><li>Timing restrictions explained before work</li></ul><a class="link" href="#/bats">Read the bats dossier <span class="arr">→</span></a></article>
+        <article class="dossier"><span class="big-x" aria-hidden="true">X</span><span class="tag"><b>ATTIC</b> — RACCOONS</span><h3>Raccoons in Attic</h3><p>Heavy, destructive attic invaders. Remove, clean, seal — and keep them out.</p><ul><li>Removal + entry repair</li><li>Cleanout + disinfection options</li><li>Roofline + vent sealing</li></ul><a class="link" href="#/raccoons">Read the raccoons dossier <span class="arr">→</span></a></article>
+        <article class="dossier"><span class="big-x" aria-hidden="true">X</span><span class="tag"><b>ATTIC</b> — SQUIRRELS</span><h3>Squirrels in Attic</h3><p>Daytime attic noise, chewed entries, nesting in insulation and soffits.</p><ul><li>Entry location + sealing</li><li>Nesting removal + cleanout</li><li>Soffit / fascia repair guidance</li></ul><a class="link" href="#/squirrels">Read the squirrels dossier <span class="arr">→</span></a></article>
+        <article class="dossier"><span class="big-x" aria-hidden="true">X</span><span class="tag"><b>STRUCTURE</b> — EXCLUSION</span><h3>Exclusion + Attic Restoration</h3><p>The work that makes removal last: seal the building, restore the attic.</p><ul><li>Structural exclusion</li><li>Cleanouts, insulation removal, disinfection</li><li>Insulation installation</li></ul><a class="link" href="#/exclusion">Read the exclusion dossier <span class="arr">→</span></a></article>
+        <article class="dossier"><span class="big-x" aria-hidden="true">X</span><span class="tag"><b>OTHER</b> — WILDLIFE</span><h3>Groundhogs / Skunks / Opossums / Birds</h3><p>Yard, crawl space, chimney, and vent wildlife across the Finger Lakes.</p><ul><li>Species-correct removal</li><li>Entry + harborage sealing</li><li>Prevention for the next season</li></ul><a class="link" href="#/other-wildlife">Read the other-wildlife dossier <span class="arr">→</span></a></article>
       </div>
     </div>
   </section>
@@ -125,7 +132,7 @@
         <h2>RodentX Returns —<br>Rebuilt to a<br><span class="red">Higher Standard.</span></h2>
         <p>RodentX operated years ago, then stopped. This is not a restart of the old way. It is a rebuild — corporate, documented, and deliberate. Same X. Higher standard.</p>
         <p class="band-note">Service area: Finger Lakes Region, NY only. No street address published — service-area business.</p>
-        <p><a class="comeback-link" href="#/territory">See Territory →</a></p>
+        <p><a class="comeback-link" href="#/territory">See Territory <span class="arr">→</span></a></p>
       </div>
       <div class="comeback-logo-wrap">
         <img id="comebackLogoB" class="comeback-logo" alt="RODENTX — WILDLIFE MANAGEMENT">
@@ -156,7 +163,7 @@
     </div>
   </section>
 
-  <section class="section" aria-label="FAQ">
+  <section class="section" id="faq" aria-label="FAQ">
     <div class="wrap">
       <p class="kicker"><i>05 —</i> QUESTIONS</p>
       <div class="section-head"><h2>Straight<br>answers.</h2><p>What people ask before they book. If your question isn&rsquo;t here, call or send the form.</p></div>
@@ -286,7 +293,7 @@
     <p>No street address published — service-area business.</p>
     <p>Some exclusion work carries a warranty — coverage for the property is reviewed with you before service begins.</p>
     <p>NYS NWCO license renewal in process.</p>
-  </div><aside class="side-card"><h3>Use the form on Home</h3><p>The full form lives on the home page so you never lose it.</p><p><a class="btn red" href="#/">Back to Home Form →</a></p></aside></div></div>
+  </div><aside class="side-card"><h3>Use the form on Home</h3><p>The full form lives on the home page so you never lose it.</p><p><a class="btn red" href="#/">Back to Home Form <span class="arr">→</span></a></p></aside></div></div>
 </section>
 
 </main>
@@ -299,9 +306,11 @@
         <p class="footer-tagline"><span>Finger Lakes wildlife removal. One region. Covered properly.</span><span>RodentX is back — rebuilt properly.</span></p>
       </div>
       <div><h4>Services</h4><ul><li><a href="#/mice-rats">Mice &amp; Rats</a></li><li><a href="#/bats">Bats in Attic</a></li><li><a href="#/raccoons">Raccoons in Attic</a></li><li><a href="#/squirrels">Squirrels in Attic</a></li><li><a href="#/exclusion">Exclusion + Attic Restoration</a></li><li><a href="#/commercial">Commercial</a></li></ul></div>
-      <div><h4>Contact</h4><ul><li><a href="tel:+15855550100">(585) 555-0100</a></li><li><a href="mailto:contact@rodentxwildlife.com">contact@rodentxwildlife.com</a></li><li>Finger Lakes Region, NY</li><li>NYS NWCO license renewal in process</li><li><a href="#/contact">Request Inspection</a></li></ul></div>
+      <div><h4>Explore</h4><ul><li><a href="#/">Home</a></li><li><a href="#/territory">Territory</a></li><li><a href="#/contact">Request Inspection</a></li><li><a href="#/faq">FAQ</a></li></ul></div>
+      <div><h4>Contact</h4><ul><li><a href="tel:+15855550100">(585) 555-0100</a></li><li><a href="mailto:contact@rodentxwildlife.com">contact@rodentxwildlife.com</a></li><li>Finger Lakes Region, NY only</li><li>No street address published — service-area business.</li><li>NYS NWCO license renewal in process</li></ul></div>
     </div>
-    <div class="footer-bottom"><span>© RodentX LLC — RodentX Wildlife Management. rodentxwildlife.com</span><span>Finger Lakes Region, NY only · No street address published</span></div>
+    <div class="footer-seal" aria-hidden="true">X</div>
+    <div class="footer-bottom"><span>© 2026 RodentX Wildlife Management · Finger Lakes Region, NY only · Built to a higher standard.</span><button class="to-top" id="toTop" type="button">Back to top ↑</button></div>
   </div>
 </footer>
 
