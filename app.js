@@ -119,6 +119,10 @@
       window.scrollTo(0, 0);
     }
     closeMenu();
+    // Instagram embeds: re-process when a page becomes visible (Why starts hidden)
+    try {
+      if (window.instgrm && window.instgrm.Embeds) window.instgrm.Embeds.process();
+    } catch (e) { /* embed.js not loaded yet — it self-processes on load */ }
   }
 
   window.addEventListener('hashchange', routeFromHash);

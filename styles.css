@@ -470,8 +470,7 @@ footer{background:#0A0A0B;color:#E5E7EB;padding:var(--s7) 0 var(--s4);border-top
 @media (max-width:768px){
   .job-photo figcaption{padding:12px}
 }
-/* Hero caption: a plain line on the figure's white ground — no black fill, no
-   rule above it — so nothing in the hero can read as a stray black strip
-   while it slides under the sticky header. Detail-page captions keep the
-   black bar; they are mid-page content figures and never sit at the fold. */
-.hero-photo figcaption{background:transparent;color:#444;padding:12px 0 0}
+/* Instagram embed (Why page) — official Reel embed, sized to the column.
+   !important only here, to override Instagram's injected inline styles. */
+.ig-embed{width:100%;max-width:400px;margin:var(--s3) 0;border:1px solid var(--line);border-radius:2px;overflow:hidden}
+.ig-embed .instagram-media{margin:0 auto !important;min-width:0 !important;width:100% !important}
