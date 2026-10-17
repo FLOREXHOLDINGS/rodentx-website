@@ -135,6 +135,32 @@
     });
   });
 
+  // --- Instagram video facades (Why page): no iframe loads until a tap ---
+  document.addEventListener('click', function (e) {
+    var facade = e.target && e.target.closest ? e.target.closest('.ig-facade') : null;
+    if (!facade) return;
+    var id = facade.getAttribute('data-reel');
+    if (!id) return;
+    var url = 'https://www.instagram.com/reel/' + id + '/?utm_source=ig_embed&utm_campaign=loading';
+    var wrap = document.createElement('div');
+    wrap.className = 'ig-embed';
+    var quote = document.createElement('blockquote');
+    quote.className = 'instagram-media';
+    quote.setAttribute('data-instgrm-permalink', url);
+    quote.setAttribute('data-instgrm-version', '14');
+    var link = document.createElement('a');
+    link.setAttribute('href', url);
+    link.setAttribute('target', '_blank');
+    link.setAttribute('rel', 'noopener');
+    link.textContent = 'View this post on Instagram';
+    quote.appendChild(link);
+    wrap.appendChild(quote);
+    facade.replaceWith(wrap);
+    try {
+      if (window.instgrm && window.instgrm.Embeds) window.instgrm.Embeds.process();
+    } catch (err) { /* embed.js not loaded yet — it self-processes on load */ }
+  });
+
   // --- Desktop dropdowns: click toggles, Escape / outside click closes ---
   document.querySelectorAll('.nav-drop').forEach(function (drop) {
     var btn = drop.querySelector('.nav-drop-btn');
