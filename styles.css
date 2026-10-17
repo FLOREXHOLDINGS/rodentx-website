@@ -7,6 +7,8 @@
    Section inner gap 24. Card padding desktop 32 / mobile 24.
    Card grid gap 24 desktop / 16 mobile. Heading-to-body 16. Body-to-CTA 24.
    List item gap 8. Hub card padding 24 desktop / 20 mobile.
+   Page rhythm: content starts 32 below the hero block and ends 48 before
+   the footer (mobile 24 / 40). Hero caption is a plain line, never a bar.
 */
 :root{
   --white:#FFFFFF;
@@ -76,7 +78,7 @@ h1,h2,h3,h4{padding-bottom:4px}
 .nav-toggle.open .burger span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
 /* Mobile menu: FULL-SCREEN BLACK OVERLAY — covers page entirely, never peeks. */
 body.menu-open{overflow:hidden}
-.mobile-menu{position:fixed;inset:0;top:96px;bottom:0;z-index:60;background:#0A0A0B;border-top:4px solid var(--red);padding:40px 24px 48px;overflow-y:auto;opacity:0;visibility:hidden;transform:translateY(-12px);transition:opacity 250ms ease,transform 250ms ease,visibility 0s linear 250ms}
+.mobile-menu{position:fixed;inset:0;top:96px;bottom:0;z-index:60;background:#0A0A0B;border-top:4px solid var(--red);padding:40px var(--pad) 48px;overflow-y:auto;opacity:0;visibility:hidden;transform:translateY(-12px);transition:opacity 250ms ease,transform 250ms ease,visibility 0s linear 250ms}
 .mobile-menu.open{opacity:1;visibility:visible;transform:translateY(0);transition:opacity 250ms ease,transform 250ms ease,visibility 0s}
 .mm-list{display:flex;flex-direction:column;gap:8px}
 .mm-list a{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:22px 0;text-decoration:none;font-weight:700;font-size:24px;line-height:1.2;color:#fff;transition:color 180ms ease}
@@ -101,11 +103,11 @@ body.menu-open{overflow:hidden}
 .hero h1{position:relative;z-index:2;font-size:clamp(42px,6.2vw,76px);line-height:1.02;letter-spacing:-.035em;margin:0 0 var(--s2);font-weight:900;padding-bottom:4px}
 .hero h1 .red{color:var(--red)}
 .hero h1 .thin{font-weight:300;letter-spacing:-.02em}
-.hero-lede{font-size:19px;line-height:1.55;color:#222;max-width:62ch;margin:20px 0 var(--s3)}
+.hero-lede{font-size:19px;line-height:1.55;color:#222;max-width:62ch;margin:var(--s2) 0 var(--s3)}
 .hero-meta{display:flex;flex-wrap:wrap;gap:12px;margin:0 0 var(--s3)}
 .pill{border:1px solid var(--black);background:#fff;color:var(--ink);padding:8px 11px;font-size:13px;font-weight:700;border-radius:999px}
 .pill strong{color:var(--red)}
-.issue-panel{background:var(--black);color:#fff;padding:28px;border-radius:4px;box-shadow:0 18px 40px rgba(0,0,0,.14)}
+.issue-panel{background:var(--black);color:#fff;padding:var(--s4);border-radius:4px;box-shadow:0 18px 40px rgba(0,0,0,.14)}
 .issue-panel h2{font-size:20px;line-height:1.15;margin:0 0 var(--s1);letter-spacing:-.01em}
 .issue-panel p{color:#C9CDD1;font-size:14px;margin:0 0 var(--s2)}
 .issue-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
@@ -127,7 +129,7 @@ body.menu-open{overflow:hidden}
 .section-head h2{font-size:clamp(30px,4vw,48px);line-height:1.02;letter-spacing:-.03em;margin:0;font-weight:900;padding-bottom:4px}
 .section-head h2 .red{color:var(--red)}
 .section-head p{max-width:48ch;color:#333;margin:0;font-size:16px}
-.kicker{font-family:var(--mono);font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--grey);margin:0 0 12px}
+.kicker{font-family:var(--mono);font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--grey);margin:0 0 var(--s2)}
 .kicker::before{content:"";display:inline-block;width:24px;height:2px;background:var(--red);vertical-align:middle;margin-right:8px}
 .kicker i{font-style:normal;color:var(--red)}
 .kicker.on-dark{color:var(--grey-2)}
@@ -262,7 +264,7 @@ footer{background:#0A0A0B;color:#E5E7EB;padding:var(--s7) 0 var(--s4);border-top
 .footer-brand{text-align:left}
 .footer-logo{max-width:200px}
 .footer-brand p{text-align:left}
-.footer-tagline{font-size:13px;line-height:1.6;margin:12px 0 0;color:#C9CDD1}
+.footer-tagline{font-size:13px;line-height:1.6;margin:var(--s2) 0 0;color:#C9CDD1}
 .footer-tagline span{display:block}
 .footer-logo img{width:100%;height:auto;background:transparent;border:0;box-shadow:none;padding:0}
 .footer-seal{text-align:center;color:var(--red);font-weight:900;font-size:24px;line-height:1;letter-spacing:0;margin:var(--s4) 0 0;user-select:none}
@@ -287,6 +289,7 @@ footer{background:#0A0A0B;color:#E5E7EB;padding:var(--s7) 0 var(--s4);border-top
   .x-step{border-bottom:1px solid #262628}
   .x-step:nth-child(2){border-right:0}
   .detail-grid,.band .wrap,.contact-grid{grid-template-columns:1fr}
+  .band .wrap{gap:var(--s4)}
   .side-card{position:static}
   .footer-grid{grid-template-columns:1fr 1fr}
   .footer-grid > div + div{border-left:0;padding-left:0}
@@ -298,16 +301,14 @@ footer{background:#0A0A0B;color:#E5E7EB;padding:var(--s7) 0 var(--s4);border-top
 }
 /* Responsive — mobile */
 @media (max-width:768px){
-  .wrap{padding:0 16px}
-  .header-inner{padding:0 16px;gap:12px;min-height:96px}
+  .header-inner{gap:12px;min-height:96px}
   .brand{height:96px;display:flex;align-items:center}
   .brand img{height:72px;width:auto;max-width:260px;object-fit:contain}
   .header-cta{display:none}
   .header-phone{display:none}
   .nav-toggle{display:flex}
   .hero-x{display:none}
-  .hero-inner{padding:56px 16px 40px;gap:var(--s4)}
-  .hero-meta{gap:12px}
+  .hero-inner{gap:var(--s4)}
   .hero-proof{flex-direction:column;gap:0}
   .hero-proof div{padding:var(--s2) 0;border-bottom:1px solid var(--line);width:100%}
   .hero-proof div:last-child{border-bottom:0}
@@ -317,7 +318,7 @@ footer{background:#0A0A0B;color:#E5E7EB;padding:var(--s7) 0 var(--s4);border-top
   .band .wrap{gap:var(--s4)}
   .comeback-logo{max-width:220px}
   .x-system{grid-template-columns:1fr}
-  .x-step{border-right:0;border-bottom:1px solid #262628;padding:var(--s3) 20px}
+  .x-step{border-right:0;border-bottom:1px solid #262628;padding:var(--s3)}
   .x-step:last-child{border-bottom:0}
   .footer-grid{grid-template-columns:1fr;text-align:center;gap:0}
   .footer-grid > div{border-left:0;border-top:1px solid #262628;padding:var(--s3) 0 0;margin-top:var(--s3)}
@@ -335,12 +336,12 @@ footer{background:#0A0A0B;color:#E5E7EB;padding:var(--s7) 0 var(--s4);border-top
   .side-card{padding:var(--s3)}
   .detail-grid,[data-page="contact"] .contact-grid{padding:var(--s3) 0 40px;gap:var(--s3)}
   .detail-hero{padding:40px 0 var(--s3)}
-  .issue-panel{padding:20px}
+  .issue-panel{padding:var(--s3)}
 }
 /* Responsive — small phones */
 @media (max-width:390px){
   .mobile-menu{top:92px}
-  .header-inner{padding:0 12px;min-height:92px}
+  .header-inner{padding:0 var(--pad);min-height:92px}
   .brand{height:92px}
   .brand img{height:64px;width:auto;max-width:230px;object-fit:contain}
   .header-cta{display:none}
@@ -408,9 +409,10 @@ footer{background:#0A0A0B;color:#E5E7EB;padding:var(--s7) 0 var(--s4);border-top
 [data-page="resources"] h2{font-size:24px;letter-spacing:-.02em;margin:var(--s4) 0 var(--s2)}
 [data-page="resources"] h2:first-of-type{margin-top:var(--s4)}
 [data-page="resources"] .lede{font-size:16px;color:#333;max-width:68ch;margin:0}
-/* Hub + resources pages: same 48px bottom breathing room detail pages end with,
-   so grids never sit flush against the footer. */
-[data-page="wildlife"] .hub-grid,[data-page="services"] .hub-grid{padding-bottom:var(--s6)}
+/* Hub + resources pages follow the same page rhythm as detail pages:
+   content starts 32 below the hero block and ends 48 before the footer,
+   so grids never sit flush against either one. */
+[data-page="wildlife"] .hub-grid,[data-page="services"] .hub-grid{padding:var(--s4) 0 var(--s6)}
 [data-page="resources"] .wrap{padding-bottom:var(--s6)}
 /* Layout tokens: single --pad, 24px desktop / 20px mobile. */
 @media (max-width:768px){
@@ -422,6 +424,10 @@ footer{background:#0A0A0B;color:#E5E7EB;padding:var(--s7) 0 var(--s4);border-top
   .hub-card{padding:var(--s3)}
   .id-grid{grid-template-columns:1fr;gap:var(--s2)}
   .id-card{padding:var(--s3)}
+  /* Mobile page rhythm: start 24 below the hero block, end 40 before the footer. */
+  [data-page="wildlife"] .hub-grid,[data-page="services"] .hub-grid{padding-top:var(--s3);padding-bottom:40px}
+  [data-page="resources"] .wrap{padding-bottom:40px}
+  [data-page="resources"] h2:first-of-type{margin-top:var(--s3)}
 }
 @media (max-width:960px){
   .hub-grid{grid-template-columns:1fr 1fr}
@@ -440,6 +446,7 @@ footer{background:#0A0A0B;color:#E5E7EB;padding:var(--s7) 0 var(--s4);border-top
 
 /* ---------- Real job photos (first stint) — one system everywhere ----------
    Sharp 2px corners, 1px #E2E3E5 border, black caption bar with red X marker.
+   Exception: the hero caption is a plain line (see the last rule in this file).
    No overlay text on photos, no filters — the work is the proof. */
 .job-photo{margin:0;border:1px solid var(--line);border-radius:2px;overflow:hidden;background:#fff}
 .job-photo img{width:100%;height:auto;display:block}
@@ -463,3 +470,8 @@ footer{background:#0A0A0B;color:#E5E7EB;padding:var(--s7) 0 var(--s4);border-top
 @media (max-width:768px){
   .job-photo figcaption{padding:12px}
 }
+/* Hero caption: a plain line on the figure's white ground — no black fill, no
+   rule above it — so nothing in the hero can read as a stray black strip
+   while it slides under the sticky header. Detail-page captions keep the
+   black bar; they are mid-page content figures and never sit at the fold. */
+.hero-photo figcaption{background:transparent;color:#444;padding:12px 0 0}
