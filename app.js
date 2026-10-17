@@ -1,61 +1,50 @@
-// RodentX V2 — hash routing, logos, issue selector, mobile nav, FAQ, form,
+// RodentX V2 — hash routing, issue selector, mobile nav, FAQ, forms,
 // header shadow on scroll, reveal-on-scroll, back-to-top
 (function () {
   'use strict';
 
-  // --- Logos (from assets/logos.js — same artwork, background made transparent) ---
-  var logos = window.RODENTX_LOGOS || {};
-  function setLogo(id, src, fallbackAlt) {
-    var el = document.getElementById(id);
-    if (!el) return;
-    if (src) { el.src = src; }
-    else { el.alt = fallbackAlt || el.alt; }
-  }
-  setLogo('headerLogo', logos.LOGO_A, 'RODENTX — WILDLIFE MANAGEMENT');
-  setLogo('footerLogo', logos.LOGO_REV, 'RODENTX — WILDLIFE MANAGEMENT, reversed on black');
-  setLogo('comebackLogoB', logos.LOGO_REV, 'RODENTX — WILDLIFE MANAGEMENT');
-
-
   // --- Per-route document title + meta description (one H1/title per view) ---
   var TITLES = {
-    home: 'RodentX Wildlife Management — Finger Lakes Wildlife Removal | Mice & Rats, Bats, Raccoons, Squirrels',
-    wildlife: 'Wildlife Removal by Animal — RodentX Wildlife Management',
-    'mice-rats': 'Mice & Rats Removal — RodentX Wildlife Management',
-    bats: 'Bats in Attic Removal — RodentX Wildlife Management',
-    raccoons: 'Raccoons in Attic Removal — RodentX Wildlife Management',
-    squirrels: 'Squirrels in Attic Removal — RodentX Wildlife Management',
-    'other-wildlife': 'Groundhogs, Skunks, Opossums & Birds — RodentX Wildlife Management',
-    services: 'Services by Job — RodentX Wildlife Management',
-    inspection: 'Inspection — RodentX Wildlife Management',
-    removal: 'Removal — RodentX Wildlife Management',
-    exclusion: 'Exclusion — RodentX Wildlife Management',
-    restoration: 'Attic Restoration — RodentX Wildlife Management',
-    monitoring: 'Monitoring — RodentX Wildlife Management',
-    commercial: 'Commercial Wildlife Programs — RodentX Wildlife Management',
-    territory: 'Service Areas — Finger Lakes Region — RodentX Wildlife Management',
-    why: 'Why RodentX — RodentX Wildlife Management',
-    resources: 'Resources: Identify It, Prevent It, FAQ — RodentX Wildlife Management',
-    contact: 'Request an Inspection — RodentX Wildlife Management'
+    home: 'Finger Lakes Wildlife Removal | RodentX Wildlife Management',
+    wildlife: 'Wildlife Removal by Animal | RodentX Wildlife Management',
+    'mice-rats': 'Mice & Rats Removal | RodentX Wildlife Management',
+    bats: 'Bats in Attic Removal | RodentX Wildlife Management',
+    raccoons: 'Raccoons in Attic Removal | RodentX Wildlife Management',
+    squirrels: 'Squirrels in Attic Removal | RodentX Wildlife Management',
+    'other-wildlife': 'Groundhogs, Skunks, Opossums | RodentX Wildlife Management',
+    services: 'Wildlife Services by Job | RodentX Wildlife Management',
+    inspection: 'Wildlife Inspection | RodentX Wildlife Management',
+    removal: 'Humane Wildlife Removal | RodentX Wildlife Management',
+    exclusion: 'Wildlife Exclusion & Sealing | RodentX Wildlife Management',
+    restoration: 'Attic Restoration | RodentX Wildlife Management',
+    monitoring: 'Wildlife Monitoring | RodentX Wildlife Management',
+    commercial: 'Commercial Wildlife Programs | RodentX Wildlife Management',
+    territory: 'Service Areas: Finger Lakes | RodentX Wildlife Management',
+    why: 'Why RodentX: The X Standard | RodentX Wildlife Management',
+    resources: 'Wildlife ID Guide & FAQ | RodentX Wildlife Management',
+    contact: 'Request an Inspection | RodentX Wildlife Management',
+    privacy: 'Privacy Notice | RodentX Wildlife Management'
   };
   var DESCRIPTIONS = {
-    home: 'RodentX Wildlife Management — Finger Lakes wildlife removal and exclusion. Mice & rats, bats in attic, raccoons in attic, squirrels in attic, exclusion + attic restoration. RodentX is back — rebuilt properly.',
-    wildlife: 'Wildlife removal by animal: mice & rats, bats, raccoons, squirrels, groundhogs, skunks, opossums, birds. Signs, what we do, what we seal.',
-    'mice-rats': 'Mice & rats: full rodent programs — entry, harborage, removal, seal, monitor. Finger Lakes Region, NY.',
-    bats: 'Bats in attic: careful, lawful, season-aware work. Timing restrictions explained before work.',
-    raccoons: 'Raccoons in attic: remove, clean, seal — and keep them out.',
-    squirrels: 'Squirrels in attic: daytime noise, chewed entry. Find the entry, remove, seal it properly.',
-    'other-wildlife': 'Groundhogs, skunks, opossums, birds: yard, crawl space, chimney, and vent wildlife, handled species-correctly.',
-    services: 'Services by job: inspection, removal, exclusion, attic restoration, monitoring, commercial programs. One job at a time, done properly.',
-    inspection: 'Inspection: find the entry, the run, and the damage — written findings before work.',
-    removal: 'Removal: humane, lawful, species-correct removal. Removal alone does not keep animals out — exclusion is the point.',
-    exclusion: 'Exclusion: the seal that lasts. Durable, animal-proof materials — every seal listed in writing.',
-    restoration: 'Attic restoration: cleanouts, insulation removal, disinfection, insulation installation.',
-    monitoring: 'Monitoring: proof the seal holds. Follow-up check, signs to watch, next step if activity returns.',
-    commercial: 'Commercial wildlife programs for businesses that can\u2019t afford a sighting, a shutdown, or a repeat. Documented, discreet, sealed.',
-    territory: 'Service areas: Finger Lakes Region, NY only. Five hubs, one standard. Keuka is home — Penn Yan / Yates County.',
-    why: 'Why RodentX: the X Standard, what you get in writing, the comeback, licensing.',
-    resources: 'Resources: identify the animal, prevention checklist, and straight answers to frequently asked questions.',
-    contact: 'Request an inspection: tell us the animal, the town, and where you are hearing or seeing it. We reply by phone or email.'
+    home: 'RodentX Wildlife Management — Finger Lakes wildlife removal and exclusion: mice & rats, bats, raccoons, squirrels. Inspect / Remove / Exclude / Monitor.',
+    wildlife: 'Wildlife removal by animal in the Finger Lakes: mice & rats, bats, raccoons, squirrels, groundhogs, skunks, opossums, birds — signs, what we do, what we seal.',
+    'mice-rats': 'Mice & rats in the Finger Lakes: full rodent programs — entry survey, removal, sealing and monitoring for homes and businesses, every seal in writing.',
+    bats: 'Bats in the attic in the Finger Lakes: careful, lawful, season-aware removal and exclusion. Timing restrictions are explained before any work begins.',
+    raccoons: 'Raccoons in the attic: heavy noise, torn vents, damaged insulation. We remove, clean, restore and seal — documented in writing — across the Finger Lakes.',
+    squirrels: 'Squirrels in the attic: daytime noise and chewed entries. We find the entry, remove the squirrels and seal it properly, across the Finger Lakes Region.',
+    'other-wildlife': 'Groundhogs, skunks, opossums and birds in the Finger Lakes: burrows, denning under porches, crawl-space and vent nesting, handled species-correctly.',
+    services: 'RodentX services by job in the Finger Lakes: inspection, removal, exclusion, attic restoration, monitoring and commercial programs. One job, done properly.',
+    inspection: 'Wildlife inspection in the Finger Lakes: we find the entry, the run and the damage — roofline, attic and crawl space — written findings before work.',
+    removal: 'Humane, lawful wildlife removal in the Finger Lakes, matched to the species and the season — always followed by exclusion, because the seal is the point.',
+    exclusion: 'Wildlife exclusion in the Finger Lakes: durable, animal-proof sealing of entries, vents and gaps — every seal listed in writing. Burrow Defense below grade.',
+    restoration: 'Attic restoration in the Finger Lakes: cleanouts, insulation removal, disinfection and insulation installation after removal and sealing, in writing.',
+    monitoring: 'Wildlife monitoring in the Finger Lakes: follow-up checks that the seal holds and the activity stops, with the next step documented if activity returns.',
+    commercial: 'Commercial wildlife programs in the Finger Lakes for restaurants, warehouses, wineries and breweries: documented findings, sealing, monitoring cadence.',
+    territory: 'RodentX service areas: the Finger Lakes Region, NY only — five hubs plus the Corning–Elmira edge. Home base is Penn Yan / Yates County on Keuka Lake.',
+    why: 'Why RodentX: the X Standard — Inspect / Remove / Exclude / Monitor — what you get in writing, the comeback story, and our licensing status, stated plainly.',
+    resources: 'RodentX resources: identify the animal by noise, time and location, run the prevention checklist, and read straight answers to frequently asked questions.',
+    contact: 'Request a wildlife inspection in the Finger Lakes: tell us the animal, the town and the signs. We reply by phone or email — same-day when available.',
+    privacy: 'How the RodentX website handles your information: forms open your own email app, nothing is stored by the site, and Instagram videos load only on tap.'
   };
   function updateMeta(name) {
     if (TITLES[name]) document.title = TITLES[name];
@@ -85,7 +74,17 @@
     setToggleLabel(false);
   }
 
-  function routeFromHash() {
+  function closeDropdowns() {
+    document.querySelectorAll('.nav-drop.open').forEach(function (d) { d.classList.remove('open'); });
+    document.querySelectorAll('.nav-drop-btn').forEach(function (b) { b.setAttribute('aria-expanded', 'false'); });
+  }
+
+  var viaPopstate = false;
+  window.addEventListener('popstate', function () { viaPopstate = true; });
+
+  function routeFromHash(isNav) {
+    // The skip link targets #main — it is not a route, leave routing alone.
+    if (window.location.hash === '#main') { viaPopstate = false; return; }
     var hash = (window.location.hash || '#/').replace(/^#\/?/, '');
     // Contact form lives on home; #/contact shows the contact detail page.
     // Home sub-anchors (territory etc.) stay on home.
@@ -94,14 +93,21 @@
     if (name === 'faq') { name = 'resources'; scrollTarget = 'faq'; }
     if (name === '') name = 'home';
     var found = false;
+    var activePage = null;
     pages.forEach(function (p) {
       var active = p.getAttribute('data-page') === name;
       p.classList.toggle('active', active);
-      if (active) found = true;
+      if (active) { found = true; activePage = p; }
     });
     if (!found) {
-      pages.forEach(function (p) { p.classList.toggle('active', p.getAttribute('data-page') === 'home'); });
+      pages.forEach(function (p) {
+        var isHome = p.getAttribute('data-page') === 'home';
+        p.classList.toggle('active', isHome);
+        if (isHome) activePage = p;
+      });
       name = 'home';
+      // Clean the junk route out of the address bar.
+      try { window.history.replaceState(null, '', '#/'); } catch (e) { /* older browser */ }
     }
     updateMeta(name);
     navLinks.forEach(function (a) {
@@ -109,24 +115,33 @@
       if (isCurrent) a.setAttribute('aria-current', 'page');
       else a.removeAttribute('aria-current');
     });
+    // Move focus to the new view's heading so keyboard / screen-reader
+    // users land on the page they opened, not on a hidden element.
+    if (isNav && activePage) {
+      var h1 = activePage.querySelector('h1');
+      if (h1) {
+        if (!h1.hasAttribute('tabindex')) h1.setAttribute('tabindex', '-1');
+        h1.focus({ preventScroll: true });
+      }
+    }
     if (scrollTarget) {
       setTimeout(function () {
         var el = document.getElementById(scrollTarget);
         var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
         if (el) el.scrollIntoView({ behavior: reduced ? 'auto' : 'smooth', block: 'start' });
       }, 60);
-    } else {
+    } else if (!isNav || !viaPopstate) {
+      // Fresh navigation starts at the top; Back/Forward (popstate) keeps
+      // the browser's own scroll restoration.
       window.scrollTo(0, 0);
     }
+    viaPopstate = false;
     closeMenu();
-    // Instagram embeds: re-process when a page becomes visible (Why starts hidden)
-    try {
-      if (window.instgrm && window.instgrm.Embeds) window.instgrm.Embeds.process();
-    } catch (e) { /* embed.js not loaded yet — it self-processes on load */ }
+    closeDropdowns();
   }
 
-  window.addEventListener('hashchange', routeFromHash);
-  routeFromHash();
+  window.addEventListener('hashchange', function () { routeFromHash(true); });
+  routeFromHash(false);
 
   // --- Issue selector buttons ---
   document.querySelectorAll('[data-go]').forEach(function (btn) {
@@ -134,6 +149,25 @@
       window.location.hash = btn.getAttribute('data-go');
     });
   });
+
+  // --- Instagram embeds: the library loads lazily on the first facade tap,
+  //     so no third-party script runs for visitors who never play a video ---
+  var igRequested = false;
+  function processInstagram() {
+    try {
+      if (window.instgrm && window.instgrm.Embeds) window.instgrm.Embeds.process();
+    } catch (e) { /* library not ready — its load handler processes the page */ }
+  }
+  function ensureInstagram() {
+    if (window.instgrm && window.instgrm.Embeds) { processInstagram(); return; }
+    if (igRequested) return;
+    igRequested = true;
+    var s = document.createElement('script');
+    s.src = 'https://www.instagram.com/embed.js';
+    s.async = true;
+    s.onload = processInstagram;
+    document.body.appendChild(s);
+  }
 
   // --- Instagram video facades (Why page): no iframe loads until a tap ---
   document.addEventListener('click', function (e) {
@@ -156,9 +190,7 @@
     quote.appendChild(link);
     wrap.appendChild(quote);
     facade.replaceWith(wrap);
-    try {
-      if (window.instgrm && window.instgrm.Embeds) window.instgrm.Embeds.process();
-    } catch (err) { /* embed.js not loaded yet — it self-processes on load */ }
+    ensureInstagram();
   });
 
   // --- Desktop dropdowns: click toggles, Escape / outside click closes ---
@@ -168,22 +200,22 @@
     btn.addEventListener('click', function (e) {
       e.stopPropagation();
       var wasOpen = drop.classList.contains('open');
-      document.querySelectorAll('.nav-drop.open').forEach(function (d) { d.classList.remove('open'); });
-      document.querySelectorAll('.nav-drop-btn').forEach(function (b) { b.setAttribute('aria-expanded', 'false'); });
+      closeDropdowns();
       if (!wasOpen) {
         drop.classList.add('open');
         btn.setAttribute('aria-expanded', 'true');
       }
     });
   });
-  document.addEventListener('click', function () {
-    document.querySelectorAll('.nav-drop.open').forEach(function (d) { d.classList.remove('open'); });
-    document.querySelectorAll('.nav-drop-btn').forEach(function (b) { b.setAttribute('aria-expanded', 'false'); });
-  });
+  document.addEventListener('click', function () { closeDropdowns(); });
   document.addEventListener('keydown', function (e) {
-    if (e.key === 'Escape') {
-      document.querySelectorAll('.nav-drop.open').forEach(function (d) { d.classList.remove('open'); });
-      document.querySelectorAll('.nav-drop-btn').forEach(function (b) { b.setAttribute('aria-expanded', 'false'); });
+    if (e.key !== 'Escape') return;
+    var openDrop = document.querySelector('.nav-drop.open');
+    if (openDrop) {
+      var openBtn = openDrop.querySelector('.nav-drop-btn');
+      closeDropdowns();
+      // Return focus to the button so the panel cannot re-open under focus.
+      if (openBtn) openBtn.focus();
     }
   });
 
@@ -229,7 +261,7 @@
 
   // --- Reveal-on-scroll: fade + 12px rise, staggered per group ---
   var revealTargets = document.querySelectorAll(
-    '.dossier, .x-step, .hub, .hub-card, .id-card, .side-card, .contact-card, .faq-item, .section-head, .detail-hero'
+    '.x-step, .hub-card, .id-card, .side-card, .contact-card, .faq-item, .section-head, .detail-hero'
   );
   if ('IntersectionObserver' in window) {
     var io = new IntersectionObserver(function (entries) {
@@ -275,20 +307,36 @@
         return el ? el.value.trim() : '';
       }
       var name = val('name');
-      var contact = val('contact');
+      var phone = val('phone');
+      var email = val('email');
       var town = val('town');
       var issue = val('issue');
       var msg = val('message');
-      var subject = encodeURIComponent('Inspection request — ' + issue + ' — ' + town);
-      var body = encodeURIComponent(
-        'Name: ' + name + '\n' +
-        'Phone/email: ' + contact + '\n' +
-        'Town: ' + town + '\n' +
-        'Issue: ' + issue + '\n' +
-        'Details: ' + msg + '\n\n' +
-        'Sent from rodentxwildlife.com contact form.'
-      );
       var success = form.querySelector('.form-success');
+      var error = form.querySelector('.form-error');
+      // Name + Town are required by the fields themselves; here we enforce
+      // the one-of rule: we need a phone number OR an email to reply to.
+      if (!phone && !email) {
+        if (error) {
+          error.textContent = 'Add a phone number or an email so we can reply.';
+          error.style.display = 'block';
+        }
+        if (success) success.style.display = 'none';
+        var phoneEl = form.querySelector('[data-field="phone"]');
+        if (phoneEl) phoneEl.focus();
+        return;
+      }
+      if (error) error.style.display = 'none';
+      var lines = ['Name: ' + name];
+      if (phone) lines.push('Phone: ' + phone);
+      if (email) lines.push('Email: ' + email);
+      lines.push('Town: ' + town);
+      lines.push('Issue: ' + issue);
+      lines.push('Details: ' + msg);
+      lines.push('');
+      lines.push('Sent from rodentxwildlife.com contact form.');
+      var subject = encodeURIComponent('Inspection request — ' + issue + ' — ' + town);
+      var body = encodeURIComponent(lines.join('\n'));
       if (success) success.style.display = 'block';
       window.location.href = 'mailto:contact@rodentxwildlife.com?subject=' + subject + '&body=' + body;
     });
