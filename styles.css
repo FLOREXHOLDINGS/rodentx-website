@@ -32,25 +32,26 @@
   --s12:96px;
 }
 *{box-sizing:border-box;overflow-wrap:break-word}
-html{scroll-behavior:smooth;scroll-padding-top:112px;overflow-x:clip}
+html{scroll-behavior:smooth;scroll-padding-top:120px;overflow-x:clip}
 body{margin:0;background:var(--white);color:var(--ink);font-family:var(--font);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:clip}
 a{color:inherit}
 a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid var(--red);outline-offset:2px}
 img{max-width:100%;height:auto;display:block}
 .wrap{max-width:var(--max);width:100%;margin:0 auto;padding:0 var(--pad)}
-section, [data-page]{scroll-margin-top:112px}
+section, [data-page]{scroll-margin-top:120px}
 .skip{position:absolute;left:-9999px;top:0;background:var(--black);color:#fff;padding:10px 14px;z-index:100}
 .skip:focus{left:12px;top:12px}
 h1,h2,h3,h4{padding-bottom:4px}
 .small-note{font-size:13px;color:#444;line-height:1.6;margin:0}
 
-/* ---------- Header: 88px desktop / 76px mobile, logo vertically centered ----------
+/* ---------- Header: 96px desktop / mobile, 92px at ≤390px — logo 72px (64px ≤390)
+   sits inside with 12px breathing room top/bottom (14px ≤390), never paints outside.
    Solid #FFFFFF (no translucency) + transparent logo = no visible box around the mark. */
 .site-header{position:sticky;top:0;z-index:50;background:#FFFFFF;border-bottom:1px solid var(--line);transition:box-shadow 200ms ease}
 .site-header.scrolled{box-shadow:0 4px 16px rgba(0,0,0,.08)}
-.header-inner{max-width:var(--max);margin:0 auto;padding:0 var(--pad);display:flex;align-items:center;gap:var(--s3);min-height:88px}
-.brand{display:flex;align-items:center;flex-shrink:0;text-decoration:none}
-.brand img{height:72px;width:auto;max-width:260px;object-fit:contain;background:transparent;border:0;box-shadow:none;padding:0}
+.header-inner{max-width:var(--max);margin:0 auto;padding:0 var(--pad);display:flex;align-items:center;gap:var(--s3);min-height:96px}
+.brand{display:flex;align-items:center;flex-shrink:0;text-decoration:none;height:100%;overflow:hidden}
+.brand img{height:72px;width:auto;max-width:260px;object-fit:contain;background:transparent;border:0;box-shadow:none;padding:0;flex-shrink:0}
 .main-nav{margin-left:auto;display:flex;align-items:center;gap:22px}
 .main-nav a{position:relative;text-decoration:none;font-size:14px;font-weight:600;letter-spacing:.02em;padding:10px 2px;border-radius:2px;color:var(--ink);transition:color 180ms ease}
 .main-nav a::after{content:"";position:absolute;left:2px;right:2px;bottom:4px;height:2px;background:var(--red);transform:scaleX(0);transform-origin:left;transition:transform 200ms ease}
@@ -75,7 +76,7 @@ h1,h2,h3,h4{padding-bottom:4px}
 .nav-toggle.open .burger span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
 /* Mobile menu: FULL-SCREEN BLACK OVERLAY — covers page entirely, never peeks. */
 body.menu-open{overflow:hidden}
-.mobile-menu{position:fixed;inset:0;top:88px;bottom:0;z-index:60;background:#0A0A0B;border-top:4px solid var(--red);padding:40px 24px 48px;overflow-y:auto;opacity:0;visibility:hidden;transform:translateY(-12px);transition:opacity 250ms ease,transform 250ms ease,visibility 0s linear 250ms}
+.mobile-menu{position:fixed;inset:0;top:96px;bottom:0;z-index:60;background:#0A0A0B;border-top:4px solid var(--red);padding:40px 24px 48px;overflow-y:auto;opacity:0;visibility:hidden;transform:translateY(-12px);transition:opacity 250ms ease,transform 250ms ease,visibility 0s linear 250ms}
 .mobile-menu.open{opacity:1;visibility:visible;transform:translateY(0);transition:opacity 250ms ease,transform 250ms ease,visibility 0s}
 .mm-list{display:flex;flex-direction:column;gap:8px}
 .mm-list a{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:22px 0;text-decoration:none;font-weight:700;font-size:24px;line-height:1.2;color:#fff;transition:color 180ms ease}
@@ -232,6 +233,8 @@ body.menu-open{overflow:hidden}
 .faq-item.open .faq-q .faq-icon{transform:rotate(45deg)}
 .next-step{border-top:1px solid var(--line);padding-top:var(--s2);margin:var(--s3) 0 0;font-size:14px;line-height:1.6}
 .contact-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:var(--s4);align-items:start}
+/* Contact page: same breathing room detail pages get from .detail-grid (32 top / 48 bottom). */
+[data-page="contact"] .contact-grid{padding:var(--s4) 0 var(--s6)}
 .contact-card{border:1px solid var(--line);padding:var(--s4);background:#fff}
 .contact-card h3{margin:0 0 var(--s2);font-size:20px}
 .contact-card p{font-size:14px;color:#333;margin:0 0 var(--s2);line-height:1.6}
@@ -296,8 +299,8 @@ footer{background:#0A0A0B;color:#E5E7EB;padding:var(--s7) 0 var(--s4);border-top
 /* Responsive — mobile */
 @media (max-width:768px){
   .wrap{padding:0 16px}
-  .header-inner{padding:0 16px;gap:12px;min-height:88px}
-  .brand{height:88px;display:flex;align-items:center}
+  .header-inner{padding:0 16px;gap:12px;min-height:96px}
+  .brand{height:96px;display:flex;align-items:center}
   .brand img{height:72px;width:auto;max-width:260px;object-fit:contain}
   .header-cta{display:none}
   .header-phone{display:none}
@@ -316,7 +319,6 @@ footer{background:#0A0A0B;color:#E5E7EB;padding:var(--s7) 0 var(--s4);border-top
   .x-system{grid-template-columns:1fr}
   .x-step{border-right:0;border-bottom:1px solid #262628;padding:var(--s3) 20px}
   .x-step:last-child{border-bottom:0}
-  .hub{padding:20px}
   .footer-grid{grid-template-columns:1fr;text-align:center;gap:0}
   .footer-grid > div{border-left:0;border-top:1px solid #262628;padding:var(--s3) 0 0;margin-top:var(--s3)}
   .footer-grid > div:first-child{border-top:0;padding-top:0;margin-top:0}
@@ -331,15 +333,15 @@ footer{background:#0A0A0B;color:#E5E7EB;padding:var(--s7) 0 var(--s4);border-top
   .contact-grid{gap:var(--s3)}
   .contact-card{padding:var(--s3)}
   .side-card{padding:var(--s3)}
-  .detail-grid{padding:var(--s3) 0 40px;gap:var(--s3)}
+  .detail-grid,[data-page="contact"] .contact-grid{padding:var(--s3) 0 40px;gap:var(--s3)}
   .detail-hero{padding:40px 0 var(--s3)}
   .issue-panel{padding:20px}
 }
 /* Responsive — small phones */
 @media (max-width:390px){
-  .mobile-menu{top:84px}
-  .header-inner{padding:0 12px;min-height:84px}
-  .brand{height:84px}
+  .mobile-menu{top:92px}
+  .header-inner{padding:0 12px;min-height:92px}
+  .brand{height:92px}
   .brand img{height:64px;width:auto;max-width:230px;object-fit:contain}
   .header-cta{display:none}
   .hero h1{font-size:38px}
@@ -406,6 +408,10 @@ footer{background:#0A0A0B;color:#E5E7EB;padding:var(--s7) 0 var(--s4);border-top
 [data-page="resources"] h2{font-size:24px;letter-spacing:-.02em;margin:var(--s4) 0 var(--s2)}
 [data-page="resources"] h2:first-of-type{margin-top:var(--s4)}
 [data-page="resources"] .lede{font-size:16px;color:#333;max-width:68ch;margin:0}
+/* Hub + resources pages: same 48px bottom breathing room detail pages end with,
+   so grids never sit flush against the footer. */
+[data-page="wildlife"] .hub-grid,[data-page="services"] .hub-grid{padding-bottom:var(--s6)}
+[data-page="resources"] .wrap{padding-bottom:var(--s6)}
 /* Layout tokens: single --pad, 24px desktop / 20px mobile. */
 @media (max-width:768px){
   :root{--pad:20px}
@@ -439,10 +445,11 @@ footer{background:#0A0A0B;color:#E5E7EB;padding:var(--s7) 0 var(--s4);border-top
 .job-photo img{width:100%;height:auto;display:block}
 .job-photo figcaption{display:flex;gap:8px;align-items:baseline;background:var(--black);color:#fff;font-size:13px;font-weight:600;line-height:1.5;padding:12px 16px}
 .job-photo figcaption .cap-x{color:var(--red);font-weight:900;font-size:15px;line-height:1;flex-shrink:0}
-.detail-grid .job-photo{margin:var(--s3) 0}
-.detail-grid .job-photo img{max-height:560px;object-fit:cover}
+/* Detail/resource photos show at NATURAL aspect — never cropped (portrait job
+   photos lose their subject to center-cropping). Width is capped instead. */
+.detail-grid .job-photo{margin:var(--s3) 0;max-width:600px}
 .job-photo-wide{max-width:720px;margin:var(--s3) 0}
-.job-photo-wide img{max-height:520px;object-fit:cover;width:100%}
+.job-photo-wide img{width:100%;height:auto}
 /* Hero draw: text + photo stacked in the left column, issue panel spans both rows.
    Mobile (single column): headline block, then full-width photo band, then panel. */
 .hero-inner{grid-template-areas:"text panel" "photo panel"}
@@ -454,6 +461,5 @@ footer{background:#0A0A0B;color:#E5E7EB;padding:var(--s7) 0 var(--s4);border-top
   .hero-inner{grid-template-areas:"text" "photo" "panel"}
 }
 @media (max-width:768px){
-  .detail-grid .job-photo img{max-height:480px}
   .job-photo figcaption{padding:12px}
 }
