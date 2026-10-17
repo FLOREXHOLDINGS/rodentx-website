@@ -1,2 +1,4 @@
 User-agent: *
 Allow: /
+
+Sitemap: https://florexholdings.github.io/rodentx-website/sitemap.xml
