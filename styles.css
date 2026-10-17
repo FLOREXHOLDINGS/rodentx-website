@@ -111,12 +111,12 @@ body.menu-open{overflow:hidden}
 .issue-panel h2{font-size:20px;line-height:1.15;margin:0 0 var(--s1);letter-spacing:-.01em}
 .issue-panel p{color:#C9CDD1;font-size:14px;margin:0 0 var(--s2)}
 .issue-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.issue-btn{background:#1A1A1C;border:1px solid #2A2A2D;color:#fff;text-align:left;padding:13px 12px;cursor:pointer;border-radius:2px;font-family:inherit;transition:border-color 180ms ease,background 180ms ease,transform 180ms ease}
+.issue-btn{background:#1A1A1C;border:1px solid #2A2A2D;color:#fff;text-align:left;padding:12px;cursor:pointer;border-radius:2px;font-family:inherit;transition:border-color 180ms ease,background 180ms ease,transform 180ms ease}
 .issue-btn:hover,.issue-btn:focus-visible{border-color:var(--red);background:#000}
 .issue-btn .k{display:block;font-weight:900;font-size:15px;letter-spacing:-.01em}
-.issue-btn .s{display:block;font-size:12px;color:#B9BEC4;margin-top:2px}
+.issue-btn .s{display:block;font-size:12px;color:#B9BEC4;margin-top:4px}
 .issue-btn.other{grid-column:1/-1}
-.issue-note{font-size:12px;color:#C9CDD1;margin:var(--s2) 0 0}
+.issue-panel .issue-note{font-size:13px;line-height:1.55;color:#C9CDD1;margin:20px 0 0;padding-top:16px;border-top:1px solid #262628}
 .issue-note a{color:#fff}
 .hero-proof{display:flex;gap:var(--s3);flex-wrap:wrap;border-top:1px solid var(--line);padding-top:var(--s2);margin-top:0}
 .hero-proof div{font-size:13px;color:#444}
