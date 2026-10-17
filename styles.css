@@ -431,3 +431,29 @@ footer{background:#0A0A0B;color:#E5E7EB;padding:var(--s7) 0 var(--s4);border-top
   .hub-grid{grid-template-columns:1fr}
   .id-grid{grid-template-columns:1fr}
 }
+
+/* ---------- Real job photos (first stint) — one system everywhere ----------
+   Sharp 2px corners, 1px #E2E3E5 border, black caption bar with red X marker.
+   No overlay text on photos, no filters — the work is the proof. */
+.job-photo{margin:0;border:1px solid var(--line);border-radius:2px;overflow:hidden;background:#fff}
+.job-photo img{width:100%;height:auto;display:block}
+.job-photo figcaption{display:flex;gap:8px;align-items:baseline;background:var(--black);color:#fff;font-size:13px;font-weight:600;line-height:1.5;padding:12px 16px}
+.job-photo figcaption .cap-x{color:var(--red);font-weight:900;font-size:15px;line-height:1;flex-shrink:0}
+.detail-grid .job-photo{margin:var(--s3) 0}
+.detail-grid .job-photo img{max-height:560px;object-fit:cover}
+.job-photo-wide{max-width:720px;margin:var(--s3) 0}
+.job-photo-wide img{max-height:520px;object-fit:cover;width:100%}
+/* Hero draw: text + photo stacked in the left column, issue panel spans both rows.
+   Mobile (single column): headline block, then full-width photo band, then panel. */
+.hero-inner{grid-template-areas:"text panel" "photo panel"}
+.hero-text{grid-area:text}
+.hero-photo{grid-area:photo}
+.issue-panel{grid-area:panel}
+.hero-photo img{aspect-ratio:4/3;object-fit:cover;object-position:center 40%}
+@media (max-width:960px){
+  .hero-inner{grid-template-areas:"text" "photo" "panel"}
+}
+@media (max-width:768px){
+  .detail-grid .job-photo img{max-height:480px}
+  .job-photo figcaption{padding:12px}
+}
