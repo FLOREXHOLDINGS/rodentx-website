@@ -17,7 +17,7 @@
   --grey-light:#F3F4F5;
   --line:#E2E3E5;
   --red:#C8102E;
-  --max:1180px;
+  --max:1200px;
   --pad:24px;
   --radius:2px;
   --font:-apple-system,BlinkMacSystemFont,"Inter","Segoe UI",Roboto,Helvetica,Arial,sans-serif;
@@ -281,7 +281,7 @@ body.menu-open{overflow:hidden}
 /* Footer: premium closing block — solid #0A0A0B, transparent logo sits directly on it.
    56 top / 32 bottom desktop, 40 / 24 mobile. 4 columns, 1px dividers, left-aligned desktop. */
 footer{background:#0A0A0B;color:#E5E7EB;padding:var(--s7) 0 var(--s4);border-top:4px solid var(--red)}
-.footer-grid{display:grid;grid-template-columns:1.3fr .8fr .7fr 1fr;gap:var(--s4);align-items:start}
+.footer-grid{display:grid;grid-template-columns:1.3fr .8fr .8fr .7fr 1fr;gap:var(--s4);align-items:start}
 .footer-grid > div + div{border-left:1px solid #262628;padding-left:var(--s3)}
 .footer-grid h4{color:#fff;margin:0 0 var(--s2);font-size:14px;letter-spacing:.12em;text-transform:uppercase}
 .footer-grid a{color:#C9CDD1;text-decoration:none;font-size:14px;line-height:1.8;transition:color 180ms ease}
@@ -387,4 +387,88 @@ footer{background:#0A0A0B;color:#E5E7EB;padding:var(--s7) 0 var(--s4);border-top
   html{scroll-behavior:auto}
   *,*::before,*::after{animation:none!important;transition:none!important}
   .reveal{opacity:1;transform:none}
+}
+
+/* ---------- Top-level IA: dropdowns, hub cards, mobile groups, resources ---------- */
+/* Desktop dropdowns: white panel, black text, red hover underline, shadow. */
+.nav-drop{position:relative}
+.nav-drop-btn{background:none;border:0;cursor:pointer;font-family:inherit;font-size:14px;font-weight:600;letter-spacing:.02em;padding:10px 2px;color:var(--ink);display:flex;align-items:center;gap:4px;border-radius:2px}
+.nav-drop-btn .caret{font-size:10px;transition:transform 180ms ease}
+.nav-drop.open .nav-drop-btn .caret,.nav-drop:hover .nav-drop-btn .caret{transform:rotate(180deg)}
+.nav-drop-btn::after{content:"";position:absolute;left:2px;right:2px;bottom:4px;height:2px;background:var(--red);transform:scaleX(0);transform-origin:left;transition:transform 200ms ease}
+.nav-drop-btn:hover::after,.nav-drop-btn:focus-visible::after,.nav-drop.open .nav-drop-btn::after{transform:scaleX(1)}
+.nav-drop-panel{position:absolute;left:0;top:100%;min-width:240px;background:#fff;border:1px solid var(--line);box-shadow:0 16px 32px rgba(0,0,0,.12);padding:8px 0;opacity:0;visibility:hidden;transform:translateY(8px);transition:opacity 180ms ease,transform 180ms ease,visibility 0s linear 180ms;z-index:70}
+.nav-drop:hover .nav-drop-panel,.nav-drop:focus-within .nav-drop-panel,.nav-drop.open .nav-drop-panel{opacity:1;visibility:visible;transform:translateY(0);transition:opacity 180ms ease,transform 180ms ease,visibility 0s}
+.nav-drop-panel a{display:block;padding:10px 16px;text-decoration:none;font-size:14px;font-weight:600;color:var(--ink);white-space:nowrap}
+.nav-drop-panel a:hover{background:var(--grey-light);text-decoration:underline;text-decoration-color:var(--red);text-underline-offset:4px}
+.nav-drop-panel a[aria-current="page"]{background:var(--black);color:#fff}
+/* Hub cards: one structure everywhere (kicker + title + 2 lines + arrow link), equal height. */
+.hub-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--s3)}
+.hub-card{border:1px solid var(--line);background:#fff;padding:var(--s4);display:flex;flex-direction:column;gap:var(--s2);position:relative;transition:border-color 200ms ease,transform 200ms ease,box-shadow 200ms ease}
+.hub-card:hover{border-color:var(--black);transform:translateY(-2px);box-shadow:0 12px 28px rgba(0,0,0,.08)}
+.hub-card.flagship{border:2px solid var(--black)}
+.hub-card .tag{font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#333}
+.hub-card .tag b{color:var(--red)}
+.hub-card h3{font-size:24px;line-height:1.02;letter-spacing:-.02em;margin:0}
+.hub-card p{font-size:14px;color:#333;margin:0;line-height:1.6}
+.hub-card .link{margin-top:auto;padding-top:var(--s2);font-weight:800;font-size:14px;text-decoration:none;border-top:1px solid var(--grey-light);color:var(--ink)}
+.hub-card .link:hover{color:var(--red)}
+.hub-card .link .arr{display:inline-block;color:var(--red);transition:transform 180ms ease}
+.hub-card .link:hover .arr{transform:translateX(4px)}
+.hub-card-more{background:var(--black);color:#fff;border-color:var(--black)}
+.hub-card-more h3{color:#fff}
+.hub-card-more p{color:#C9CDD1}
+.hub-card-more .link{color:#fff;border-top-color:#262628}
+.hub-card-more .link:hover{color:#fff}
+/* On-dark link (used on black X Standard band). */
+.link{font-weight:800;font-size:14px;text-decoration:none;color:var(--ink)}
+.link:hover{color:var(--red)}
+.link .arr{display:inline-block;color:var(--red);transition:transform 180ms ease}
+.link:hover .arr{transform:translateX(4px)}
+.on-dark-link{color:#fff}
+.on-dark-link:hover{color:#E5E7EB}
+/* Mobile menu groups: one consistent system — numbers restart inside each group. */
+.mm-group{border-top:1px solid #262628;margin-top:var(--s3);padding-top:var(--s3)}
+.mm-group:first-of-type{border-top:0;margin-top:0;padding-top:0}
+.mm-group-title{font-family:var(--mono);font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#9AA0A6;margin:0 0 4px}
+.mm-group-title::before{content:"";display:inline-block;width:24px;height:2px;background:var(--red);vertical-align:middle;margin-right:8px}
+.mm-home{display:flex;align-items:baseline;gap:16px;padding:20px 8px;text-decoration:none;font-weight:800;font-size:26px;line-height:1.2;color:#fff;border-bottom:1px solid #262628}
+.mm-group-plain a{font-size:22px}
+.mm-group .mobile-menu-foot{border-top:0}
+/* Resources: ID guide + prevention checklist. */
+.id-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--s3);margin:var(--s3) 0 var(--s4)}
+.id-card{border:1px solid var(--line);background:#fff;padding:var(--s4);display:flex;flex-direction:column;gap:var(--s1);transition:border-color 200ms ease,transform 200ms ease,box-shadow 200ms ease}
+.id-card:hover{border-color:var(--black);transform:translateY(-2px);box-shadow:0 12px 28px rgba(0,0,0,.08)}
+.id-card h3{font-size:18px;line-height:1.2;letter-spacing:-.01em;margin:0}
+.id-card p{font-size:14px;color:#333;line-height:1.6;margin:0}
+.id-card .link{margin-top:auto;padding-top:var(--s2);border-top:1px solid var(--grey-light)}
+.checklist{list-style:none;margin:0 0 var(--s2);padding:0}
+.checklist li{padding:12px 0 12px 28px;position:relative;border-bottom:1px solid var(--line);font-size:15px;line-height:1.65;color:#333}
+.checklist li::before{content:"✓";position:absolute;left:0;top:12px;color:var(--red);font-weight:900}
+/* Resources page sections: consistent rhythm inside detail pages. */
+[data-page="resources"] h2{font-size:24px;letter-spacing:-.02em;margin:var(--s4) 0 var(--s2)}
+[data-page="resources"] h2:first-of-type{margin-top:var(--s4)}
+[data-page="resources"] .lede{font-size:16px;color:#333;max-width:68ch;margin:0}
+/* Layout tokens: single --pad, 24px desktop / 20px mobile. */
+@media (max-width:768px){
+  :root{--pad:20px}
+  .wrap{padding:0 var(--pad)}
+  .header-inner{padding:0 var(--pad)}
+  .hero-inner{padding:56px var(--pad) 40px}
+  .hub-grid{grid-template-columns:1fr;gap:var(--s2)}
+  .hub-card{padding:var(--s3)}
+  .id-grid{grid-template-columns:1fr;gap:var(--s2)}
+  .id-card{padding:var(--s3)}
+}
+@media (max-width:960px){
+  .hub-grid{grid-template-columns:1fr 1fr}
+  .id-grid{grid-template-columns:1fr 1fr}
+  .footer-grid{grid-template-columns:1fr 1fr}
+}
+@media (max-width:1440px){
+  .nav-drop-panel{min-width:220px}
+}
+/* Mobile footer: single column — must come last so it wins over the 960px rule. */
+@media (max-width:768px){
+  .footer-grid{grid-template-columns:1fr}
 }

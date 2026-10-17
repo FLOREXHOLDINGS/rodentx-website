@@ -43,7 +43,7 @@
     // Home sub-anchors (territory etc.) stay on home.
     var name = hash.split('/')[0].split('?')[0] || 'home';
     var scrollTarget = null;
-    if (name === 'faq') { name = 'home'; scrollTarget = 'faq'; }
+    if (name === 'faq') { name = 'resources'; scrollTarget = 'faq'; }
     if (name === '') name = 'home';
     var found = false;
     pages.forEach(function (p) {
@@ -81,6 +81,32 @@
     });
   });
 
+  // --- Desktop dropdowns: click toggles, Escape / outside click closes ---
+  document.querySelectorAll('.nav-drop').forEach(function (drop) {
+    var btn = drop.querySelector('.nav-drop-btn');
+    if (!btn) return;
+    btn.addEventListener('click', function (e) {
+      e.stopPropagation();
+      var wasOpen = drop.classList.contains('open');
+      document.querySelectorAll('.nav-drop.open').forEach(function (d) { d.classList.remove('open'); });
+      document.querySelectorAll('.nav-drop-btn').forEach(function (b) { b.setAttribute('aria-expanded', 'false'); });
+      if (!wasOpen) {
+        drop.classList.add('open');
+        btn.setAttribute('aria-expanded', 'true');
+      }
+    });
+  });
+  document.addEventListener('click', function () {
+    document.querySelectorAll('.nav-drop.open').forEach(function (d) { d.classList.remove('open'); });
+    document.querySelectorAll('.nav-drop-btn').forEach(function (b) { b.setAttribute('aria-expanded', 'false'); });
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') {
+      document.querySelectorAll('.nav-drop.open').forEach(function (d) { d.classList.remove('open'); });
+      document.querySelectorAll('.nav-drop-btn').forEach(function (b) { b.setAttribute('aria-expanded', 'false'); });
+    }
+  });
+
   // --- Mobile nav: hamburger animates to X, menu slides down ---
   if (toggle && menu) {
     toggle.addEventListener('click', function () {
@@ -113,7 +139,7 @@
 
   // --- Reveal-on-scroll: fade + 12px rise, staggered per group ---
   var revealTargets = document.querySelectorAll(
-    '.dossier, .x-step, .hub, .side-card, .contact-card, .faq-item, .section-head, .detail-hero'
+    '.dossier, .x-step, .hub, .hub-card, .id-card, .side-card, .contact-card, .faq-item, .section-head, .detail-hero'
   );
   if ('IntersectionObserver' in window) {
     var io = new IntersectionObserver(function (entries) {

@@ -9,7 +9,7 @@
 <meta property="og:title" content="RodentX Wildlife Management — Finger Lakes Wildlife Removal">
 <meta property="og:description" content="One region. Covered properly. Inspect / Remove / Exclude / Monitor.">
 <meta property="og:type" content="website">
-<link rel="stylesheet" href="styles.css?v=3">
+<link rel="stylesheet" href="styles.css?v=4">
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -20,13 +20,32 @@
       <img id="headerLogo" alt="RODENTX — WILDLIFE MANAGEMENT">
     </a>
     <nav class="main-nav" aria-label="Primary">
-      <a href="#/" data-nav="home">Home</a>
-      <a href="#/mice-rats" data-nav="mice-rats">Mice &amp; Rats</a>
-      <a href="#/bats" data-nav="bats">Bats</a>
-      <a href="#/raccoons" data-nav="raccoons">Raccoons</a>
-      <a href="#/squirrels" data-nav="squirrels">Squirrels</a>
-      <a href="#/exclusion" data-nav="exclusion">Exclusion</a>
-      <a href="#/territory" data-nav="territory">Territory</a>
+      <div class="nav-drop" data-group="wildlife">
+        <button class="nav-drop-btn" type="button" aria-expanded="false" aria-haspopup="true">Wildlife Removal <span class="caret" aria-hidden="true">▾</span></button>
+        <div class="nav-drop-panel">
+          <a href="#/wildlife" data-nav="wildlife">All Wildlife Removal</a>
+          <a href="#/mice-rats" data-nav="mice-rats">Mice &amp; Rats</a>
+          <a href="#/bats" data-nav="bats">Bats in Attic</a>
+          <a href="#/raccoons" data-nav="raccoons">Raccoons in Attic</a>
+          <a href="#/squirrels" data-nav="squirrels">Squirrels in Attic</a>
+          <a href="#/other-wildlife" data-nav="other-wildlife">Other Wildlife</a>
+        </div>
+      </div>
+      <div class="nav-drop" data-group="services">
+        <button class="nav-drop-btn" type="button" aria-expanded="false" aria-haspopup="true">Services <span class="caret" aria-hidden="true">▾</span></button>
+        <div class="nav-drop-panel">
+          <a href="#/services" data-nav="services">All Services</a>
+          <a href="#/inspection" data-nav="inspection">Inspection</a>
+          <a href="#/removal" data-nav="removal">Removal</a>
+          <a href="#/exclusion" data-nav="exclusion">Exclusion</a>
+          <a href="#/restoration" data-nav="restoration">Attic Restoration</a>
+          <a href="#/monitoring" data-nav="monitoring">Monitoring</a>
+          <a href="#/commercial" data-nav="commercial">Commercial</a>
+        </div>
+      </div>
+      <a href="#/territory" data-nav="territory">Service Areas</a>
+      <a href="#/why" data-nav="why">Why RodentX</a>
+      <a href="#/resources" data-nav="resources">Resources</a>
     </nav>
     <a class="header-phone" href="tel:+15855550100">(585) 555-0100</a>
     <a class="header-cta" href="#/contact">Request Inspection</a>
@@ -37,15 +56,31 @@
   </div>
   <div class="mobile-menu" id="mobileMenu">
     <p class="mm-eyebrow">RodentX — Menu</p>
-    <a href="#/" data-nav="home"><span class="mi">01</span>Home</a>
-    <a href="#/mice-rats" data-nav="mice-rats"><span class="mi">02</span>Mice &amp; Rats</a>
-    <a href="#/bats" data-nav="bats"><span class="mi">03</span>Bats in Attic</a>
-    <a href="#/raccoons" data-nav="raccoons"><span class="mi">04</span>Raccoons in Attic</a>
-    <a href="#/squirrels" data-nav="squirrels"><span class="mi">05</span>Squirrels in Attic</a>
-    <a href="#/other-wildlife" data-nav="other-wildlife"><span class="mi">06</span>Other Wildlife</a>
-    <a href="#/exclusion" data-nav="exclusion"><span class="mi">07</span>Exclusion + Attic Restoration</a>
-    <a href="#/commercial" data-nav="commercial"><span class="mi">08</span>Commercial</a>
-    <a href="#/territory" data-nav="territory"><span class="mi">09</span>Territory</a>
+    <a class="mm-home" href="#/" data-nav="home">Home</a>
+    <div class="mm-group">
+      <p class="mm-group-title">Wildlife Removal</p>
+      <a href="#/wildlife" data-nav="wildlife"><span class="mi">—</span>All Wildlife Removal</a>
+      <a href="#/mice-rats" data-nav="mice-rats"><span class="mi">01</span>Mice &amp; Rats</a>
+      <a href="#/bats" data-nav="bats"><span class="mi">02</span>Bats in Attic</a>
+      <a href="#/raccoons" data-nav="raccoons"><span class="mi">03</span>Raccoons in Attic</a>
+      <a href="#/squirrels" data-nav="squirrels"><span class="mi">04</span>Squirrels in Attic</a>
+      <a href="#/other-wildlife" data-nav="other-wildlife"><span class="mi">05</span>Other Wildlife</a>
+    </div>
+    <div class="mm-group">
+      <p class="mm-group-title">Services</p>
+      <a href="#/services" data-nav="services"><span class="mi">—</span>All Services</a>
+      <a href="#/inspection" data-nav="inspection"><span class="mi">01</span>Inspection</a>
+      <a href="#/removal" data-nav="removal"><span class="mi">02</span>Removal</a>
+      <a href="#/exclusion" data-nav="exclusion"><span class="mi">03</span>Exclusion</a>
+      <a href="#/restoration" data-nav="restoration"><span class="mi">04</span>Attic Restoration</a>
+      <a href="#/monitoring" data-nav="monitoring"><span class="mi">05</span>Monitoring</a>
+      <a href="#/commercial" data-nav="commercial"><span class="mi">06</span>Commercial</a>
+    </div>
+    <div class="mm-group mm-group-plain">
+      <a href="#/territory" data-nav="territory">Service Areas</a>
+      <a href="#/why" data-nav="why">Why RodentX</a>
+      <a href="#/resources" data-nav="resources">Resources</a>
+    </div>
     <div class="mobile-menu-foot">
       <a class="mm-phone" href="tel:+15855550100">(585) 555-0100</a>
       <a class="mm-cta" href="#/contact">Request Inspection</a>
@@ -105,23 +140,42 @@
         <article class="x-step"><span class="mark" aria-hidden="true">×</span><span class="num">04 / MONITOR</span><h3>Monitor</h3><p>We check that the seal holds and the activity stops.</p><ul><li>Follow-up check</li><li>Signs to watch, explained plainly</li><li>Next step if activity returns</li></ul></article>
       </div>
       <p class="x-note"><strong>What you get in writing:</strong> findings, what was removed, what was sealed and with what, and any follow-up. <strong>Warranty:</strong> Some exclusion work carries a warranty — coverage for the property is reviewed with you before service begins.</p>
+      <p><a class="link on-dark-link" href="#/why">See the full X Standard in Why RodentX <span class="arr">→</span></a></p>
     </div>
   </section>
 
-  <section class="section" aria-label="Services">
+  <section class="section" aria-label="Wildlife removal preview">
     <div class="wrap">
-      <p class="kicker"><i>02 —</i> DOSSIERS</p>
+      <p class="kicker"><i>02 —</i> WILDLIFE REMOVAL</p>
       <div class="section-head">
         <h2>Pick the animal.<br>Get the <span class="red">dossier.</span></h2>
-        <p>Signs, what we do, what we seal — nothing generic.</p>
+        <p>Signs, what we do, what we seal — nothing generic. Full dossiers live on the Wildlife Removal page.</p>
       </div>
-      <div class="dossier-grid">
-        <article class="dossier flagship"><span class="big-x" aria-hidden="true">X</span><span class="tag"><b>FLAGSHIP</b> — MICE &amp; RATS</span><h3>Mice &amp; Rats</h3><p>The name is the promise. Full rodent programs for homes and businesses — entry, harborage, and seal.</p><ul><li>Entry-point survey + sealing plan</li><li>Removal + sanitation guidance</li><li>Monitoring until activity stops</li></ul><a class="link" href="#/mice-rats">Read the mice &amp; rats dossier <span class="arr">→</span></a></article>
-        <article class="dossier"><span class="big-x" aria-hidden="true">X</span><span class="tag"><b>ATTIC</b> — BATS</span><h3>Bats in Attic</h3><p>Colonies in attics and wall voids. Careful, lawful, season-aware work.</p><ul><li>Inspection + roost identification</li><li>Exclusion-first approach</li><li>Timing restrictions explained before work</li></ul><a class="link" href="#/bats">Read the bats dossier <span class="arr">→</span></a></article>
-        <article class="dossier"><span class="big-x" aria-hidden="true">X</span><span class="tag"><b>ATTIC</b> — RACCOONS</span><h3>Raccoons in Attic</h3><p>Heavy, destructive attic invaders. Remove, clean, seal — and keep them out.</p><ul><li>Removal + entry repair</li><li>Cleanout + disinfection options</li><li>Roofline + vent sealing</li></ul><a class="link" href="#/raccoons">Read the raccoons dossier <span class="arr">→</span></a></article>
-        <article class="dossier"><span class="big-x" aria-hidden="true">X</span><span class="tag"><b>ATTIC</b> — SQUIRRELS</span><h3>Squirrels in Attic</h3><p>Daytime attic noise, chewed entries, nesting in insulation and soffits.</p><ul><li>Entry location + sealing</li><li>Nesting removal + cleanout</li><li>Soffit / fascia repair guidance</li></ul><a class="link" href="#/squirrels">Read the squirrels dossier <span class="arr">→</span></a></article>
-        <article class="dossier"><span class="big-x" aria-hidden="true">X</span><span class="tag"><b>STRUCTURE</b> — EXCLUSION</span><h3>Exclusion + Attic Restoration</h3><p>The work that makes removal last: seal the building, restore the attic.</p><ul><li>Structural exclusion</li><li>Cleanouts, insulation removal, disinfection</li><li>Insulation installation</li></ul><a class="link" href="#/exclusion">Read the exclusion dossier <span class="arr">→</span></a></article>
-        <article class="dossier"><span class="big-x" aria-hidden="true">X</span><span class="tag"><b>OTHER</b> — WILDLIFE</span><h3>Groundhogs / Skunks / Opossums / Birds</h3><p>Yard, crawl space, chimney, and vent wildlife across the Finger Lakes.</p><ul><li>Species-correct removal</li><li>Entry + harborage sealing</li><li>Prevention for the next season</li></ul><a class="link" href="#/other-wildlife">Read the other-wildlife dossier <span class="arr">→</span></a></article>
+      <div class="hub-grid hub-grid-preview">
+        <article class="hub-card flagship"><span class="tag"><b>FLAGSHIP</b> — MICE &amp; RATS</span><h3>Mice &amp; Rats</h3><p>Full rodent programs — entry, harborage, and seal.</p><a class="link" href="#/mice-rats">Read the dossier <span class="arr">→</span></a></article>
+        <article class="hub-card"><span class="tag"><b>ATTIC</b> — BATS</span><h3>Bats in Attic</h3><p>Careful, lawful, season-aware work.</p><a class="link" href="#/bats">Read the dossier <span class="arr">→</span></a></article>
+        <article class="hub-card"><span class="tag"><b>ATTIC</b> — RACCOONS</span><h3>Raccoons in Attic</h3><p>Remove, clean, seal — and keep them out.</p><a class="link" href="#/raccoons">Read the dossier <span class="arr">→</span></a></article>
+        <article class="hub-card"><span class="tag"><b>ATTIC</b> — SQUIRRELS</span><h3>Squirrels in Attic</h3><p>Daytime noise, chewed entries, nesting.</p><a class="link" href="#/squirrels">Read the dossier <span class="arr">→</span></a></article>
+        <article class="hub-card"><span class="tag"><b>OTHER</b> — WILDLIFE</span><h3>Groundhogs / Skunks / Opossums / Birds</h3><p>Yard, crawl space, chimney, and vent wildlife.</p><a class="link" href="#/other-wildlife">Read the dossier <span class="arr">→</span></a></article>
+        <article class="hub-card hub-card-more"><h3>All wildlife removal</h3><p>Every animal, one standard: Inspect / Remove / Exclude / Monitor.</p><a class="link" href="#/wildlife">See all wildlife removal <span class="arr">→</span></a></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-label="Services preview">
+    <div class="wrap">
+      <p class="kicker"><i>03 —</i> SERVICES — BY JOB</p>
+      <div class="section-head">
+        <h2>One job at a time.<br>Done <span class="red">properly.</span></h2>
+        <p>Every job has one intent. Pick the job — the page tells you what it is and what you get.</p>
+      </div>
+      <div class="hub-grid hub-grid-preview">
+        <article class="hub-card"><span class="tag"><b>JOB 01</b> — INSPECTION</span><h3>Inspection</h3><p>Find the entry, the run, and the damage — in writing.</p><a class="link" href="#/inspection">What an inspection covers <span class="arr">→</span></a></article>
+        <article class="hub-card"><span class="tag"><b>JOB 02</b> — REMOVAL</span><h3>Removal</h3><p>Humane, lawful, species-correct removal.</p><a class="link" href="#/removal">How removal works <span class="arr">→</span></a></article>
+        <article class="hub-card"><span class="tag"><b>JOB 03</b> — EXCLUSION</span><h3>Exclusion</h3><p>The seal. Durable, animal-proof, listed in writing.</p><a class="link" href="#/exclusion">What we seal <span class="arr">→</span></a></article>
+        <article class="hub-card"><span class="tag"><b>JOB 04</b> — RESTORATION</span><h3>Attic Restoration</h3><p>Cleanouts, insulation, disinfection, install.</p><a class="link" href="#/restoration">Restore the attic <span class="arr">→</span></a></article>
+        <article class="hub-card"><span class="tag"><b>JOB 05</b> — MONITORING</span><h3>Monitoring</h3><p>Check the seal holds and activity stops.</p><a class="link" href="#/monitoring">How monitoring works <span class="arr">→</span></a></article>
+        <article class="hub-card"><span class="tag"><b>JOB 06</b> — COMMERCIAL</span><h3>Commercial Programs</h3><p>Documented programs for business.</p><a class="link" href="#/commercial">Built for business <span class="arr">→</span></a></article>
       </div>
     </div>
   </section>
@@ -129,11 +183,11 @@
   <section class="band" aria-label="Comeback">
     <div class="wrap">
       <div>
-        <p class="kicker on-dark"><i>03 —</i> THE COMEBACK</p>
+        <p class="kicker on-dark"><i>04 —</i> THE COMEBACK</p>
         <h2>RodentX Returns —<br>Rebuilt to a<br><span class="red">Higher Standard.</span></h2>
         <p>RodentX operated years ago, then stopped. This is not a restart of the old way. It is a rebuild — corporate, documented, and deliberate. Same X. Higher standard.</p>
         <p class="band-note">Service area: Finger Lakes Region, NY only. No street address published — service-area business.</p>
-        <p><a class="comeback-link" href="#/territory">See Territory <span class="arr">→</span></a></p>
+        <p><a class="comeback-link" href="#/why">See Why RodentX <span class="arr">→</span></a></p>
       </div>
       <div class="comeback-logo-wrap">
         <img id="comebackLogoB" class="comeback-logo" alt="RODENTX — WILDLIFE MANAGEMENT">
@@ -143,7 +197,7 @@
 
   <section class="section" aria-label="Territory preview">
     <div class="wrap">
-      <p class="kicker"><i>04 —</i> TERRITORY</p>
+      <p class="kicker"><i>05 —</i> TERRITORY</p>
       <div class="section-head"><h2>One region,<br>shaped by <span class="red">its lakes.</span></h2><p>Finger Lakes Region, NY. Five hubs, one standard. Keuka is home — Penn Yan / Yates County.</p></div>
       <div class="territory">
         <div class="lakes-strip" aria-label="Finger Lakes, west to east">
@@ -151,37 +205,28 @@
           <p class="lakes-line"><span>Honeoye</span><span class="sep" aria-hidden="true">·</span><span>Canandaigua</span><span class="sep" aria-hidden="true">·</span><span class="home">Keuka ★ Home</span><span class="sep" aria-hidden="true">·</span><span>Seneca</span><span class="sep" aria-hidden="true">·</span><span>Cayuga</span><span class="sep" aria-hidden="true">·</span><span>Owasco</span></p>
           <p class="lakes-sub">Home base: Penn Yan / Yates County — Keuka Lake.</p>
         </div>
-        <div class="hubs">
-          <div class="hub home"><h3><span class="dot">●</span> Penn Yan / Yates County</h3><p>Home base. Keuka Lake.</p><div class="towns">Includes: Penn Yan, Dundee, Naples</div></div>
-          <div class="hub"><h3>Rochester</h3><p>Western Finger Lakes hub.</p><div class="towns">Includes: Rochester area, Canandaigua</div></div>
-          <div class="hub"><h3>Canandaigua–Geneva</h3><p>Lakes corridor hub.</p><div class="towns">Includes: Canandaigua, Geneva, Seneca Lake</div></div>
-          <div class="hub"><h3>Syracuse</h3><p>Eastern hub.</p><div class="towns">Includes: Syracuse area, Auburn</div></div>
-          <div class="hub"><h3>Ithaca</h3><p>Southern hub.</p><div class="towns">Includes: Ithaca area, Cayuga Lake</div></div>
-          <div class="hub"><h3>Corning–Elmira</h3><p>Southern Tier edge.</p><div class="towns">Includes: Elmira, Corning, Painted Post</div></div>
-        </div>
       </div>
       <p class="territory-note">Smaller towns are served inside these hubs. If your town is in the Finger Lakes Region, tell us your town on the form.</p>
+      <p><a class="link" href="#/territory">See all service areas <span class="arr">→</span></a></p>
     </div>
   </section>
 
-  <section class="section section-grey" id="faq" aria-label="FAQ">
+  <section class="section section-grey" aria-label="FAQ preview">
     <div class="wrap">
-      <p class="kicker"><i>05 —</i> QUESTIONS</p>
-      <div class="section-head"><h2>Straight<br>answers.</h2><p>What people ask before they book. If your question isn&rsquo;t here, call or send the form.</p></div>
+      <p class="kicker"><i>06 —</i> QUESTIONS</p>
+      <div class="section-head"><h2>Straight<br>answers.</h2><p>What people ask before they book. Full answers live in Resources.</p></div>
       <div class="faq">
         <div class="faq-item"><button class="faq-q">How fast can you come? <span>+</span></button><div class="faq-a">Same-day when available — best to call or submit a form. We confirm timing by phone or email before we come.</div></div>
         <div class="faq-item"><button class="faq-q">Do you seal the entry, or just remove the animal? <span>+</span></button><div class="faq-a">Both. Removal without sealing is a repeat visit. Our standard is Inspect / Remove / Exclude / Monitor — the seal is the point.</div></div>
         <div class="faq-item"><button class="faq-q">Is there a warranty on exclusion work? <span>+</span></button><div class="faq-a">Some exclusion work carries a warranty — coverage for the property is reviewed with you before service begins.</div></div>
-        <div class="faq-item"><button class="faq-q">What about bats — are there timing restrictions? <span>+</span></button><div class="faq-a">Yes — timing restrictions apply for bats and are explained before work. We will tell you what can be done now and what must wait.</div></div>
-        <div class="faq-item"><button class="faq-q">Do you publish pricing? <span>+</span></button><div class="faq-a">No. Every building and every entry is different. We inspect, then give you the scope in writing before work begins.</div></div>
-        <div class="faq-item"><button class="faq-q">Are you licensed? <span>+</span></button><div class="faq-a">We will confirm licensing status with you before service.</div></div>
       </div>
+      <p><a class="link" href="#/faq">See all answers in Resources <span class="arr">→</span></a></p>
     </div>
   </section>
 
   <section class="section" aria-label="Contact">
     <div class="wrap">
-      <p class="kicker"><i>06 —</i> CONTACT</p>
+      <p class="kicker"><i>07 —</i> CONTACT</p>
       <div class="section-head"><h2>Request<br>an inspection.</h2><p>Tell us the animal, the town, and where you&rsquo;re hearing or seeing it. We reply by phone or email.</p></div>
       <div class="contact-grid">
         <div class="contact-card">
@@ -209,7 +254,7 @@
 
 <!-- ================= DETAIL: MICE & RATS ================= -->
 <section data-page="mice-rats" class="page" aria-label="Mice and rats dossier">
-  <div class="wrap"><div class="detail-hero"><p class="breadcrumb"><a href="#/">Home</a> / Mice &amp; Rats</p><h1>Mice &amp; Rats.<br><span class="red">The flagship.</span></h1><p class="lede">The name is the promise. RodentX does full rodent programs — entry, harborage, removal, seal, monitor — for homes and businesses across the Finger Lakes.</p></div>
+  <div class="wrap"><div class="detail-hero"><p class="breadcrumb"><a href="#/">Home</a> / <a href="#/wildlife">Wildlife Removal</a> / Mice &amp; Rats</p><h1>Mice &amp; Rats.<br><span class="red">The flagship.</span></h1><p class="lede">The name is the promise. RodentX does full rodent programs — entry, harborage, removal, seal, monitor — for homes and businesses across the Finger Lakes.</p></div>
   <div class="detail-grid"><div>
     <h2>Signs</h2><ul><li>Scratching or scurrying in walls, ceilings, or attic — especially at night</li><li>Droppings along baseboards, in cabinets, or near food storage</li><li>Gnaw marks on wood, wiring, food packaging, or insulation</li><li>Grease rub marks along runs, nesting material, or odor</li></ul>
     <h2>What we do</h2><ul><li>Full entry-point survey — foundation, doors, vents, roofline, utility penetrations</li><li>Removal matched to the building and the infestation</li><li>Harborage reduction guidance — what to clear, seal, and store differently</li><li>Monitoring until activity stops</li></ul>
@@ -220,7 +265,7 @@
 
 <!-- ================= DETAIL: BATS ================= -->
 <section data-page="bats" class="page" aria-label="Bats in attic dossier">
-  <div class="wrap"><div class="detail-hero"><p class="breadcrumb"><a href="#/">Home</a> / Bats</p><h1>Bats in Attic.<br><span class="red">Careful. Lawful.</span></h1><p class="lede">Bats in attics and wall voids need a season-aware, exclusion-first approach. We inspect, explain timing, and seal — without shortcuts.</p></div>
+  <div class="wrap"><div class="detail-hero"><p class="breadcrumb"><a href="#/">Home</a> / <a href="#/wildlife">Wildlife Removal</a> / Bats</p><h1>Bats in Attic.<br><span class="red">Careful. Lawful.</span></h1><p class="lede">Bats in attics and wall voids need a season-aware, exclusion-first approach. We inspect, explain timing, and seal — without shortcuts.</p></div>
   <div class="detail-grid"><div>
     <h2>Signs</h2><ul><li>Odor or staining near roost entries, droppings (guano) in attic</li><li>Activity at dusk near roofline, vents, or soffits</li><li>Chirping or rustling in wall voids or attic at dawn / dusk</li></ul>
     <h2>What we do</h2><ul><li>Inspection + roost-entry identification</li><li>Exclusion-first approach — one-way exits where appropriate, then sealing</li><li>Cleanout and disinfection options for affected attic areas</li></ul>
@@ -231,7 +276,7 @@
 
 <!-- ================= DETAIL: RACCOONS ================= -->
 <section data-page="raccoons" class="page" aria-label="Raccoons in attic dossier">
-  <div class="wrap"><div class="detail-hero"><p class="breadcrumb"><a href="#/">Home</a> / Raccoons</p><h1>Raccoons in Attic.<br><span class="red">Remove. Clean. Seal.</span></h1><p class="lede">Raccoons are heavy, destructive attic invaders — torn vents, damaged insulation, contaminated spaces. We remove, restore, and seal the building so they stay out.</p></div>
+  <div class="wrap"><div class="detail-hero"><p class="breadcrumb"><a href="#/">Home</a> / <a href="#/wildlife">Wildlife Removal</a> / Raccoons</p><h1>Raccoons in Attic.<br><span class="red">Remove. Clean. Seal.</span></h1><p class="lede">Raccoons are heavy, destructive attic invaders — torn vents, damaged insulation, contaminated spaces. We remove, restore, and seal the building so they stay out.</p></div>
   <div class="detail-grid"><div>
     <h2>Signs</h2><ul><li>Heavy thumping or movement in attic, especially at night</li><li>Torn roof vents, soffits, or fascia; entry holes in roofline</li><li>Damaged or flattened insulation, odor, droppings</li></ul>
     <h2>What we do</h2><ul><li>Removal + entry identification</li><li>Cleanout + disinfection options for affected areas</li><li>Insulation removal / installation options where needed</li></ul>
@@ -241,7 +286,7 @@
 
 <!-- ================= DETAIL: SQUIRRELS ================= -->
 <section data-page="squirrels" class="page" aria-label="Squirrels in attic dossier">
-  <div class="wrap"><div class="detail-hero"><p class="breadcrumb"><a href="#/">Home</a> / Squirrels</p><h1>Squirrels in Attic.<br><span class="red">Daytime noise, chewed entry.</span></h1><p class="lede">Squirrels chew entries, nest in insulation and soffits, and return to the same hole. We find the entry, remove, and seal it properly.</p></div>
+  <div class="wrap"><div class="detail-hero"><p class="breadcrumb"><a href="#/">Home</a> / <a href="#/wildlife">Wildlife Removal</a> / Squirrels</p><h1>Squirrels in Attic.<br><span class="red">Daytime noise, chewed entry.</span></h1><p class="lede">Squirrels chew entries, nest in insulation and soffits, and return to the same hole. We find the entry, remove, and seal it properly.</p></div>
   <div class="detail-grid"><div>
     <h2>Signs</h2><ul><li>Daytime scratching, running, or gnawing in attic or soffits</li><li>Chewed entry hole in fascia, soffit, or roofline</li><li>Nesting material, droppings, or damaged insulation</li></ul>
     <h2>What we do</h2><ul><li>Entry location + removal</li><li>Nesting removal + cleanout options</li><li>Soffit / fascia repair guidance and sealing</li></ul>
@@ -251,7 +296,7 @@
 
 <!-- ================= DETAIL: OTHER ================= -->
 <section data-page="other-wildlife" class="page" aria-label="Other wildlife dossier">
-  <div class="wrap"><div class="detail-hero"><p class="breadcrumb"><a href="#/">Home</a> / Other Wildlife</p><h1>Groundhogs / Skunks /<br>Opossums / Birds.<br><span class="red">The rest of the region.</span></h1><p class="lede">Finger Lakes wildlife beyond the attic four — yard, crawl space, chimney, and vent animals, handled species-correctly.</p></div>
+  <div class="wrap"><div class="detail-hero"><p class="breadcrumb"><a href="#/">Home</a> / <a href="#/wildlife">Wildlife Removal</a> / Other Wildlife</p><h1>Groundhogs / Skunks /<br>Opossums / Birds.<br><span class="red">The rest of the region.</span></h1><p class="lede">Finger Lakes wildlife beyond the attic four — yard, crawl space, chimney, and vent animals, handled species-correctly.</p></div>
   <div class="detail-grid"><div>
     <h2>What we cover</h2><ul><li><strong>Groundhogs</strong> — burrows near foundations, sheds, and gardens</li><li><strong>Skunks</strong> — denning under porches, sheds, and crawl spaces</li><li><strong>Opossums</strong> — crawl space, garage, and outbuilding visitors</li><li><strong>Birds</strong> — vent, chimney, and soffit nesting</li></ul>
     <h2>What we do</h2><ul><li>Species-correct removal</li><li>Entry + harborage sealing</li><li>Prevention for the next season</li></ul>
@@ -259,27 +304,29 @@
 </section>
 
 <!-- ================= DETAIL: EXCLUSION ================= -->
-<section data-page="exclusion" class="page" aria-label="Exclusion and attic restoration dossier">
-  <div class="wrap"><div class="detail-hero"><p class="breadcrumb"><a href="#/">Home</a> / Exclusion</p><h1>Exclusion +<br>Attic Restoration.<br><span class="red">The seal that lasts.</span></h1><p class="lede">Removal without sealing is a repeat visit. Exclusion closes the building. Attic restoration cleans and rebuilds what the animals damaged.</p></div>
+<section data-page="exclusion" class="page" aria-label="Exclusion dossier">
+  <div class="wrap"><div class="detail-hero"><p class="breadcrumb"><a href="#/">Home</a> / <a href="#/services">Services</a> / Exclusion</p><h1>Exclusion.<br><span class="red">The seal that lasts.</span></h1><p class="lede">Removal without sealing is a repeat visit. Exclusion closes the building — the X that means it stays shut.</p></div>
   <div class="detail-grid"><div>
-    <h2>Structural exclusion</h2><ul><li>Entry-point survey — roofline, vents, foundation, doors, utility penetrations</li><li>Durable, animal-proof sealing materials</li><li>Every seal listed in writing</li></ul>
-    <h2>Attic restoration</h2><ul><li>Cleanouts</li><li>Insulation removal</li><li>Disinfection</li><li>Insulation installation</li></ul>
+    <h2>What exclusion is</h2><ul><li>Entry-point survey — roofline, vents, foundation, doors, utility penetrations</li><li>Durable, animal-proof sealing materials</li><li>Every seal listed in writing — what was sealed, and with what</li></ul>
+    <h2>What we seal</h2><p>Sealed entries, vents, and gaps — foundation gaps, door sweeps, vent covers, pipe and wire penetrations, garage and sill gaps, roofline openings. Materials documented in writing.</p>
     <div class="callout"><strong>Warranty:</strong> Some exclusion work carries a warranty — coverage for the property is reviewed with you before service begins.</div>
+    <p><a class="link" href="#/restoration">If the attic was damaged: Attic Restoration <span class="arr">→</span></a></p>
   </div><aside class="side-card"><h3>Request inspection</h3><p>Ask for an exclusion survey — we document every entry before we seal.</p><ul><li>Phone: (585) 555-0100</li><li>Email: contact@rodentxwildlife.com</li></ul><p><a class="btn red" href="#/contact">Request Inspection</a></p></aside></div></div>
 </section>
 
 <!-- ================= DETAIL: COMMERCIAL ================= -->
 <section data-page="commercial" class="page" aria-label="Commercial dossier">
-  <div class="wrap"><div class="detail-hero"><p class="breadcrumb"><a href="#/">Home</a> / Commercial</p><h1>Commercial / Industrial /<br>Wineries &amp; Breweries.<br><span class="red">Built for business.</span></h1><p class="lede">Rodent and wildlife programs for businesses that can&rsquo;t afford a sighting, a shutdown, or a repeat. Documented, discreet, and sealed.</p></div>
+  <div class="wrap"><div class="detail-hero"><p class="breadcrumb"><a href="#/">Home</a> / <a href="#/services">Services</a> / Commercial</p><h1>Commercial / Industrial /<br>Wineries &amp; Breweries.<br><span class="red">Built for business.</span></h1><p class="lede">Rodent and wildlife programs for businesses that can&rsquo;t afford a sighting, a shutdown, or a repeat. Documented, discreet, and sealed.</p></div>
   <div class="detail-grid"><div>
     <h2>What we cover</h2><ul><li>Restaurants, retail, offices, warehouses, industrial sites</li><li>Wineries &amp; breweries — production, storage, and tasting spaces</li><li>Multi-unit and property-managed buildings</li></ul>
-    <h2>What you get</h2><ul><li>Entry-point survey + sealing plan</li><li>Documented findings, seals, and follow-up</li><li>Monitoring cadence agreed before work</li></ul>
+    <h2>What you get</h2><ul><li>Entry-point survey + sealing plan</li><li>Documented findings, seals, and follow-up</li><li>Monitoring cadence agreed before work</li><li>The same X Standard: Inspect / Remove / Exclude / Monitor</li></ul>
+    <h2>How it works</h2><p>We start with an inspection and a sealing plan, then removal, exclusion, and — where needed — restoration. Findings, seals, and follow-up are documented in writing, with a monitoring cadence agreed before work.</p>
   </div><aside class="side-card"><h3>Request inspection</h3><p>Tell us the facility type and the issue.</p><ul><li>Phone: (585) 555-0100</li><li>Email: contact@rodentxwildlife.com</li></ul><p><a class="btn red" href="#/contact">Request Inspection</a></p></aside></div></div>
 </section>
 
 <!-- ================= DETAIL: TERRITORY ================= -->
 <section data-page="territory" class="page" aria-label="Territory">
-  <div class="wrap"><div class="detail-hero"><p class="breadcrumb"><a href="#/">Home</a> / Territory</p><h1>One Region.<br><span class="red">Shaped by Its Lakes.</span></h1><p class="lede">Finger Lakes Region, NY only. Five hubs, one standard. Keuka is home — Penn Yan / Yates County.</p></div>
+  <div class="wrap"><div class="detail-hero"><p class="breadcrumb"><a href="#/">Home</a> / Service Areas</p><h1>One Region.<br><span class="red">Shaped by Its Lakes.</span></h1><p class="lede">Finger Lakes Region, NY only. Five hubs, one standard. Keuka is home — Penn Yan / Yates County.</p></div>
   <div class="detail-grid"><div>
     <h2>Hubs</h2><ul><li><strong>Penn Yan / Yates County</strong> — Home base, Keuka Lake. Includes Penn Yan, Dundee, Naples.</li><li><strong>Rochester</strong> — Western Finger Lakes hub. Includes Rochester area, Canandaigua.</li><li><strong>Canandaigua–Geneva</strong> — Lakes corridor hub. Includes Canandaigua, Geneva, Seneca Lake.</li><li><strong>Syracuse</strong> — Eastern hub. Includes Syracuse area, Auburn.</li><li><strong>Ithaca</strong> — Southern hub. Includes Ithaca area, Cayuga Lake.</li><li><strong>Corning–Elmira</strong> — Southern Tier edge. Includes Elmira, Corning, Painted Post.</li></ul>
     <p>Smaller towns are served inside these hubs. If your town is in the Finger Lakes Region, tell us your town on the form.</p>
@@ -297,6 +344,118 @@
   </div><aside class="side-card"><h3>Use the form on Home</h3><p>The full form lives on the home page so you never lose it.</p><p><a class="btn red" href="#/">Back to Home Form <span class="arr">→</span></a></p></aside></div></div>
 </section>
 
+<!-- ================= HUB: WILDLIFE ================= -->
+<section data-page="wildlife" class="page" aria-label="Wildlife removal hub">
+  <div class="wrap"><div class="detail-hero"><p class="breadcrumb"><a href="#/">Home</a> / Wildlife Removal</p><h1>Wildlife Removal.<br><span class="red">By animal.</span></h1><p class="lede">One standard for every animal: Inspect / Remove / Exclude / Monitor. Pick the animal — the dossier tells you the signs, what we do, and what we seal.</p></div>
+  <div class="hub-grid">
+    <article class="hub-card flagship"><span class="tag"><b>FLAGSHIP</b> — MICE &amp; RATS</span><h3>Mice &amp; Rats</h3><p>Sign: scratching, droppings, gnawing. Promise: full rodent programs — entry, harborage, and seal.</p><a class="link" href="#/mice-rats">Read the dossier <span class="arr">→</span></a></article>
+    <article class="hub-card"><span class="tag"><b>ATTIC</b> — BATS</span><h3>Bats in Attic</h3><p>Sign: odor, staining, dusk activity. Promise: careful, lawful, season-aware work.</p><a class="link" href="#/bats">Read the dossier <span class="arr">→</span></a></article>
+    <article class="hub-card"><span class="tag"><b>ATTIC</b> — RACCOONS</span><h3>Raccoons in Attic</h3><p>Sign: heavy attic noise, torn vents. Promise: remove, clean, seal — and keep them out.</p><a class="link" href="#/raccoons">Read the dossier <span class="arr">→</span></a></article>
+    <article class="hub-card"><span class="tag"><b>ATTIC</b> — SQUIRRELS</span><h3>Squirrels in Attic</h3><p>Sign: daytime attic noise, chewed entry. Promise: find the entry, remove, seal it properly.</p><a class="link" href="#/squirrels">Read the dossier <span class="arr">→</span></a></article>
+    <article class="hub-card"><span class="tag"><b>OTHER</b> — WILDLIFE</span><h3>Groundhogs / Skunks / Opossums / Birds</h3><p>Sign: burrows, denning, nesting in vents. Promise: species-correct removal and sealing.</p><a class="link" href="#/other-wildlife">Read the dossier <span class="arr">→</span></a></article>
+    <article class="hub-card hub-card-more"><h3>Not sure what it is?</h3><p>Use the ID guide in Resources — noise, time, and location point to the animal.</p><a class="link" href="#/resources">Identify the animal <span class="arr">→</span></a></article>
+  </div></div>
+</section>
+
+<!-- ================= HUB: SERVICES ================= -->
+<section data-page="services" class="page" aria-label="Services by job hub">
+  <div class="wrap"><div class="detail-hero"><p class="breadcrumb"><a href="#/">Home</a> / Services</p><h1>Services.<br><span class="red">By job.</span></h1><p class="lede">Every job has one intent. Pick the job — the page tells you what it is, what you get, and what happens next.</p></div>
+  <div class="hub-grid">
+    <article class="hub-card"><span class="tag"><b>JOB 01</b> — INSPECTION</span><h3>Inspection</h3><p>Find the entry, the run, and the damage. Written findings before work.</p><a class="link" href="#/inspection">What an inspection covers <span class="arr">→</span></a></article>
+    <article class="hub-card"><span class="tag"><b>JOB 02</b> — REMOVAL</span><h3>Removal</h3><p>Humane, lawful removal matched to the species and the season.</p><a class="link" href="#/removal">How removal works <span class="arr">→</span></a></article>
+    <article class="hub-card"><span class="tag"><b>JOB 03</b> — EXCLUSION</span><h3>Exclusion</h3><p>The seal. Durable, animal-proof materials — every seal listed in writing.</p><a class="link" href="#/exclusion">What we seal <span class="arr">→</span></a></article>
+    <article class="hub-card"><span class="tag"><b>JOB 04</b> — RESTORATION</span><h3>Attic Restoration</h3><p>Cleanouts, insulation removal, disinfection, insulation installation.</p><a class="link" href="#/restoration">Restore the attic <span class="arr">→</span></a></article>
+    <article class="hub-card"><span class="tag"><b>JOB 05</b> — MONITORING</span><h3>Monitoring</h3><p>Check the seal holds and the activity stops.</p><a class="link" href="#/monitoring">How monitoring works <span class="arr">→</span></a></article>
+    <article class="hub-card"><span class="tag"><b>JOB 06</b> — COMMERCIAL</span><h3>Commercial Programs</h3><p>Documented, discreet programs for businesses that can&rsquo;t afford a repeat.</p><a class="link" href="#/commercial">Built for business <span class="arr">→</span></a></article>
+  </div></div>
+</section>
+
+<!-- ================= DETAIL: INSPECTION ================= -->
+<section data-page="inspection" class="page" aria-label="Inspection service">
+  <div class="wrap"><div class="detail-hero"><p class="breadcrumb"><a href="#/">Home</a> / <a href="#/services">Services</a> / Inspection</p><h1>Inspection.<br><span class="red">Find it before we fix it.</span></h1><p class="lede">Every job starts with an inspection. We find where animals get in, what they damaged, and what it takes to keep them out — before any work begins.</p></div>
+  <div class="detail-grid"><div>
+    <h2>What the inspection covers</h2><ul><li>Roofline, vents, soffits, and fascia</li><li>Foundation, doors, and utility penetrations</li><li>Attic and crawl space assessment</li><li>Entry-point survey — the entry, the run, and the damage</li></ul>
+    <h2>What you get</h2><ul><li>Written findings before work</li><li>The entry points, named plainly</li><li>The scope in writing before work begins</li></ul>
+    <h2>What happens next</h2><p>After the inspection, we tell you the scope: removal, exclusion, and restoration as needed — then monitoring until activity stops. Nothing is sealed or removed before you have the findings in writing.</p>
+    <p><a class="link" href="#/removal">Next job: Removal <span class="arr">→</span></a></p>
+  </div><aside class="side-card"><h3>Request inspection</h3><p>Tell us the town and the signs. Same-day when available.</p><ul><li>Phone: (585) 555-0100</li><li>Email: contact@rodentxwildlife.com</li></ul><p><a class="btn red" href="#/contact">Request Inspection</a></p><p class="small-note">We confirm timing by phone or email before we come.</p></aside></div></div>
+</section>
+
+<!-- ================= DETAIL: REMOVAL ================= -->
+<section data-page="removal" class="page" aria-label="Removal service">
+  <div class="wrap"><div class="detail-hero"><p class="breadcrumb"><a href="#/">Home</a> / <a href="#/services">Services</a> / Removal</p><h1>Removal.<br><span class="red">Humane. Lawful. Species-correct.</span></h1><p class="lede">Removal matched to the species, the season, and the building. No shortcuts, no handling promises we can&rsquo;t keep.</p></div>
+  <div class="detail-grid"><div>
+    <h2>How removal works</h2><ul><li>Species-correct methods for the animal and the building</li><li>Timing restrictions explained before work</li><li>Removal matched to the infestation — not a one-visit spray</li></ul>
+    <h2>What removal does not do</h2><p>Removal alone does not keep animals out. Without sealing, the next animal uses the same entry. That is why every removal leads to exclusion — the seal is the point.</p>
+    <p><a class="link" href="#/exclusion">Next job: Exclusion <span class="arr">→</span></a></p>
+  </div><aside class="side-card"><h3>Request inspection</h3><p>Removal starts with an inspection — we find the entry first.</p><ul><li>Phone: (585) 555-0100</li><li>Email: contact@rodentxwildlife.com</li></ul><p><a class="btn red" href="#/contact">Request Inspection</a></p></aside></div></div>
+</section>
+
+<!-- ================= DETAIL: RESTORATION ================= -->
+<section data-page="restoration" class="page" aria-label="Attic restoration service">
+  <div class="wrap"><div class="detail-hero"><p class="breadcrumb"><a href="#/">Home</a> / <a href="#/services">Services</a> / Attic Restoration</p><h1>Attic Restoration.<br><span class="red">Rebuild what they damaged.</span></h1><p class="lede">Animals damage attics — insulation, clean space, and air quality. Restoration cleans and rebuilds what they damaged, after removal and sealing.</p></div>
+  <div class="detail-grid"><div>
+    <h2>What restoration includes</h2><ul><li>Cleanouts</li><li>Insulation removal</li><li>Disinfection</li><li>Insulation installation</li></ul>
+    <h2>When it applies</h2><p>Restoration follows removal and exclusion — first the animal is out, then the entry is sealed, then the attic is restored. Every step is documented in writing.</p>
+    <p><a class="link" href="#/monitoring">Next job: Monitoring <span class="arr">→</span></a></p>
+  </div><aside class="side-card"><h3>Request inspection</h3><p>Ask for an attic assessment — we document the damage before we restore.</p><ul><li>Phone: (585) 555-0100</li><li>Email: contact@rodentxwildlife.com</li></ul><p><a class="btn red" href="#/contact">Request Inspection</a></p></aside></div></div>
+</section>
+
+<!-- ================= DETAIL: MONITORING ================= -->
+<section data-page="monitoring" class="page" aria-label="Monitoring service">
+  <div class="wrap"><div class="detail-hero"><p class="breadcrumb"><a href="#/">Home</a> / <a href="#/services">Services</a> / Monitoring</p><h1>Monitoring.<br><span class="red">Proof the seal holds.</span></h1><p class="lede">The job is not finished when the entry is sealed. We check that the seal holds and the activity stops.</p></div>
+  <div class="detail-grid"><div>
+    <h2>What monitoring is</h2><ul><li>Follow-up check</li><li>Signs to watch, explained plainly</li><li>Monitoring until activity stops</li></ul>
+    <h2>If activity returns</h2><p>We tell you the next step if activity returns. The seal, the findings, and the follow-up are documented in writing.</p>
+    <p><a class="link" href="#/contact">Request an inspection <span class="arr">→</span></a></p>
+  </div><aside class="side-card"><h3>Request inspection</h3><p>Tell us the town and the signs. Same-day when available.</p><ul><li>Phone: (585) 555-0100</li><li>Email: contact@rodentxwildlife.com</li></ul><p><a class="btn red" href="#/contact">Request Inspection</a></p></aside></div></div>
+</section>
+
+<!-- ================= HUB: WHY ================= -->
+<section data-page="why" class="page" aria-label="Why RodentX">
+  <div class="wrap"><div class="detail-hero"><p class="breadcrumb"><a href="#/">Home</a> / Why RodentX</p><h1>Why RodentX.<br><span class="red">Same X. Higher standard.</span></h1><p class="lede">RodentX operated years ago, then stopped. This is not a restart of the old way. It is a rebuild — corporate, documented, and deliberate.</p></div>
+  <div class="detail-grid"><div>
+    <h2>The X Standard</h2><p>Every job follows the same four moves, in the same order. The X is not decoration — it is the seal, the closure, the proof the job is finished.</p>
+    <ul><li><strong>01 / Inspect</strong> — <a href="#/inspection">Find the entry, the run, and the damage</a>. Written findings before work.</li><li><strong>02 / Remove</strong> — <a href="#/removal">Humane, lawful removal</a> matched to the species and the season.</li><li><strong>03 / Exclude</strong> — <a href="#/exclusion">The seal</a>. Durable, animal-proof materials — the X that means it stays shut.</li><li><strong>04 / Monitor</strong> — <a href="#/monitoring">Check the seal holds</a> and the activity stops.</li></ul>
+    <h2>What you get in writing</h2><p>Findings, what was removed, what was sealed and with what, and any follow-up. Some exclusion work carries a warranty — coverage for the property is reviewed with you before service begins.</p>
+    <h2>The comeback</h2><p>RodentX is back — rebuilt properly. Same X. Higher standard. Service area: Finger Lakes Region, NY only. No street address published — service-area business.</p>
+    <h2>Licensing</h2><p>NYS NWCO license renewal in process. We will confirm status with you before service.</p>
+  </div><aside class="side-card"><h3>Request inspection</h3><p>See the standard in person — starting with an inspection.</p><ul><li>Phone: (585) 555-0100</li><li>Email: contact@rodentxwildlife.com</li></ul><p><a class="btn red" href="#/contact">Request Inspection</a></p></aside></div></div>
+</section>
+
+<!-- ================= HUB: RESOURCES ================= -->
+<section data-page="resources" class="page" aria-label="Resources">
+  <div class="wrap"><div class="detail-hero"><p class="breadcrumb"><a href="#/">Home</a> / Resources</p><h1>Resources.<br><span class="red">Identify it. Prevent it.</span></h1><p class="lede">What animal is it, how do you keep it out, and what do people ask before they book.</p></div>
+
+  <h2>What animal is it?</h2>
+  <p class="lede">Match the noise, the time, and the location — then open the dossier.</p>
+  <div class="id-grid">
+    <article class="id-card"><h3>Scratching / scurrying at night</h3><p>Walls, ceilings, or attic — especially at night.</p><p><strong>Likely: Mice &amp; Rats</strong></p><a class="link" href="#/mice-rats">Mice &amp; Rats dossier <span class="arr">→</span></a></article>
+    <article class="id-card"><h3>Odor / staining, dusk activity</h3><p>Roofline, vents, or soffits at dusk.</p><p><strong>Likely: Bats</strong></p><a class="link" href="#/bats">Bats dossier <span class="arr">→</span></a></article>
+    <article class="id-card"><h3>Heavy thumping at night</h3><p>Attic, especially at night. Torn vents.</p><p><strong>Likely: Raccoons</strong></p><a class="link" href="#/raccoons">Raccoons dossier <span class="arr">→</span></a></article>
+    <article class="id-card"><h3>Daytime scratching / gnawing</h3><p>Attic or soffits during the day. Chewed entry.</p><p><strong>Likely: Squirrels</strong></p><a class="link" href="#/squirrels">Squirrels dossier <span class="arr">→</span></a></article>
+    <article class="id-card"><h3>Burrows / denning / vent nesting</h3><p>Yard, porch, crawl space, chimney, vents.</p><p><strong>Likely: Groundhogs / Skunks / Opossums / Birds</strong></p><a class="link" href="#/other-wildlife">Other wildlife dossier <span class="arr">→</span></a></article>
+  </div>
+
+  <h2>Prevention checklist</h2>
+  <ul class="checklist"><li><strong>Seal.</strong> Keep entries, vents, and gaps sealed — the seal is the point.</li><li><strong>Store.</strong> Store food and waste so it does not feed harborage.</li><li><strong>Clear.</strong> Clear harborage — what to clear, seal, and store differently, per your inspection findings.</li><li><strong>Watch.</strong> Watch for the signs: scratching, droppings, gnaw marks, odor, torn vents.</li></ul>
+  <p class="small-note">Prevention follows your inspection findings — the checklist above is general guidance, not a substitute for an inspection.</p>
+
+  <h2 id="faq">Frequently asked questions</h2>
+  <div class="faq">
+    <div class="faq-item"><button class="faq-q">How fast can you come? <span>+</span></button><div class="faq-a">Same-day when available — best to call or submit a form. We confirm timing by phone or email before we come.</div></div>
+    <div class="faq-item"><button class="faq-q">Do you seal the entry, or just remove the animal? <span>+</span></button><div class="faq-a">Both. Removal without sealing is a repeat visit. Our standard is Inspect / Remove / Exclude / Monitor — the seal is the point.</div></div>
+    <div class="faq-item"><button class="faq-q">Is there a warranty on exclusion work? <span>+</span></button><div class="faq-a">Some exclusion work carries a warranty — coverage for the property is reviewed with you before service begins.</div></div>
+    <div class="faq-item"><button class="faq-q">What about bats — are there timing restrictions? <span>+</span></button><div class="faq-a">Yes — timing restrictions apply for bats and are explained before work. We will tell you what can be done now and what must wait.</div></div>
+    <div class="faq-item"><button class="faq-q">Do you publish pricing? <span>+</span></button><div class="faq-a">No. Every building and every entry is different. We inspect, then give you the scope in writing before work begins.</div></div>
+    <div class="faq-item"><button class="faq-q">Are you licensed? <span>+</span></button><div class="faq-a">We will confirm licensing status with you before service.</div></div>
+    <div class="faq-item"><button class="faq-q">What areas do you serve? <span>+</span></button><div class="faq-a">Finger Lakes Region, NY only — five hubs plus the Corning–Elmira edge. Smaller towns are served inside these hubs.</div></div>
+    <div class="faq-item"><button class="faq-q">How do I request an inspection? <span>+</span></button><div class="faq-a">Call (585) 555-0100 or submit the form — tell us the animal, the town, and where you&rsquo;re hearing or seeing it. We reply by phone or email.</div></div>
+  </div>
+  <p><a class="btn red" href="#/contact">Request Inspection</a></p>
+  </div>
+</section>
+
 </main>
 
 <footer>
@@ -306,8 +465,9 @@
         <div class="footer-logo"><img id="footerLogo" alt="RODENTX — WILDLIFE MANAGEMENT, reversed on black"></div>
         <p class="footer-tagline"><span>Finger Lakes wildlife removal. One region. Covered properly.</span><span>RodentX is back — rebuilt properly.</span></p>
       </div>
-      <div><h4>Services</h4><ul><li><a href="#/mice-rats">Mice &amp; Rats</a></li><li><a href="#/bats">Bats in Attic</a></li><li><a href="#/raccoons">Raccoons in Attic</a></li><li><a href="#/squirrels">Squirrels in Attic</a></li><li><a href="#/exclusion">Exclusion + Attic Restoration</a></li><li><a href="#/commercial">Commercial</a></li></ul></div>
-      <div><h4>Explore</h4><ul><li><a href="#/">Home</a></li><li><a href="#/territory">Territory</a></li><li><a href="#/contact">Request Inspection</a></li><li><a href="#/faq">FAQ</a></li></ul></div>
+      <div><h4>Wildlife Removal</h4><ul><li><a href="#/wildlife">All Wildlife Removal</a></li><li><a href="#/mice-rats">Mice &amp; Rats</a></li><li><a href="#/bats">Bats in Attic</a></li><li><a href="#/raccoons">Raccoons in Attic</a></li><li><a href="#/squirrels">Squirrels in Attic</a></li><li><a href="#/other-wildlife">Other Wildlife</a></li></ul></div>
+      <div><h4>Services</h4><ul><li><a href="#/services">All Services</a></li><li><a href="#/inspection">Inspection</a></li><li><a href="#/removal">Removal</a></li><li><a href="#/exclusion">Exclusion</a></li><li><a href="#/restoration">Attic Restoration</a></li><li><a href="#/monitoring">Monitoring</a></li><li><a href="#/commercial">Commercial</a></li></ul></div>
+      <div><h4>Explore</h4><ul><li><a href="#/">Home</a></li><li><a href="#/territory">Service Areas</a></li><li><a href="#/why">Why RodentX</a></li><li><a href="#/resources">Resources</a></li><li><a href="#/faq">FAQ</a></li><li><a href="#/contact">Request Inspection</a></li></ul></div>
       <div><h4>Contact</h4><ul><li><a href="tel:+15855550100">(585) 555-0100</a></li><li><a href="mailto:contact@rodentxwildlife.com">contact@rodentxwildlife.com</a></li><li>Finger Lakes Region, NY only</li><li>No street address published — service-area business.</li><li>NYS NWCO license renewal in process</li></ul></div>
     </div>
     <div class="footer-seal" aria-hidden="true">X</div>
@@ -315,7 +475,7 @@
   </div>
 </footer>
 
-<script src="assets/logos.js?v=3"></script>
-<script src="app.js?v=3"></script>
+<script src="assets/logos.js?v=4"></script>
+<script src="app.js?v=4"></script>
 </body>
 </html>
