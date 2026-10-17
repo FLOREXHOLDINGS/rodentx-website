@@ -1,4 +1,4 @@
-// RodentX V2 — hash routing, logos, issue selector, mobile nav, FAQ, form placeholder
+// RodentX V2 — hash routing, logos, issue selector, mobile nav, FAQ, form
 (function () {
   'use strict';
 
@@ -12,7 +12,7 @@
   }
   setLogo('headerLogo', logos.LOGO_A, 'RODENTX — WILDLIFE MANAGEMENT');
   setLogo('footerLogo', logos.LOGO_REV, 'RODENTX — WILDLIFE MANAGEMENT, reversed on black');
-  setLogo('comebackLogoB', logos.LOGO_B, 'RODENTX stacked logo');
+  setLogo('comebackLogoB', logos.LOGO_REV, 'RODENTX — WILDLIFE MANAGEMENT');
 
   // --- Hash routing: #/ , #/mice-rats, #/bats, ... ---
   var pages = Array.prototype.slice.call(document.querySelectorAll('[data-page]'));
@@ -84,7 +84,7 @@
     });
   });
 
-  // --- Contact form: mailto placeholder — does NOT fake a submission endpoint ---
+  // --- Contact form: opens email with the details filled in ---
   var form = document.getElementById('contactForm');
   if (form) {
     form.addEventListener('submit', function (e) {
@@ -101,7 +101,7 @@
         'Town: ' + town + '\n' +
         'Issue: ' + issue + '\n' +
         'Details: ' + msg + '\n\n' +
-        'Sent from rodentxwildlife.com contact form (mailto placeholder).'
+        'Sent from rodentxwildlife.com contact form.'
       );
       var success = document.getElementById('formSuccess');
       if (success) success.style.display = 'block';
